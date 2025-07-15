@@ -67,7 +67,7 @@ const ProjectDetails = ({ project }: Props) => {
         () => {
             gsap.utils
                 .toArray<HTMLDivElement>('#images > div')
-                .forEach((imageDiv, i) => {
+                .forEach((imageDiv, _i) => {
                     gsap.to(imageDiv, {
                         backgroundPosition: `center 0%`,
                         ease: 'none',

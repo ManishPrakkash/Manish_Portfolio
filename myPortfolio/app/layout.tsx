@@ -29,8 +29,27 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-    title: 'Portfolio - Manish Prakash',
-    description: 'Personal portfolio of Manish Prakkash',
+    title: 'Manish Prakash - Full Stack Developer Portfolio',
+    description: 'Full Stack Developer specializing in React, Node.js, and modern web technologies. View my projects, skills, and experience.',
+    keywords: ['Full Stack Developer', 'React', 'Node.js', 'JavaScript', 'TypeScript', 'Portfolio'],
+    authors: [{ name: 'Manish Prakash' }],
+    creator: 'Manish Prakash',
+    publisher: 'Manish Prakash',
+    robots: 'index, follow',
+    openGraph: {
+        title: 'Manish Prakash - Full Stack Developer Portfolio',
+        description: 'Full Stack Developer specializing in React, Node.js, and modern web technologies.',
+        type: 'website',
+        locale: 'en_US',
+        siteName: 'Manish Prakash Portfolio',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Manish Prakash - Full Stack Developer Portfolio',
+        description: 'Full Stack Developer specializing in React, Node.js, and modern web technologies.',
+    },
+    viewport: 'width=device-width, initial-scale=1',
+    themeColor: '#000000',
 };
 
 export default function RootLayout({
@@ -61,15 +80,7 @@ export default function RootLayout({
                         duration: 1.4,
                     }}
                 >
-                    {/* <a
-                        href="https://forms.gle/t73XYJgWD5cJNr6e8"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 block bg-black text-center z-[1] text-sm py-2 hover:text-primary transition-all"
-                    >
-                        Frontend dev? I&apos;ll help you polish your resume —
-                        completely free.
-                    </a> */}
+
                     <Navbar />
                     <main>{children}</main>
                     <Footer />
