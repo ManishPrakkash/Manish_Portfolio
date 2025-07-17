@@ -23,9 +23,7 @@ const Footer = async () => {
             stargazers_count = data.stargazers_count || 0;
             forks_count = data.forks_count || 0;
         }
-    } catch (e) {
-        // fallback to 0 if fetch fails
-    }
+    } catch {} // fallback to 0 if fetch fails
 
     return (
         <footer className="text-center pb-5" id="contact">

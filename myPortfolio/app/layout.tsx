@@ -11,7 +11,6 @@ import Navbar from '@/components/Navbar';
 import CustomCursor from '@/components/CustomCursor';
 import Preloader from '../components/Preloader';
 import StickyEmail from './_components/StickyEmail';
-import ClientScripts from './_components/ClientScripts';
 
 const antonFont = Anton({
     weight: '400',
