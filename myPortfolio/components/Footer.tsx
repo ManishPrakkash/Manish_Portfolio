@@ -7,17 +7,25 @@ interface RepoStats {
 }
 
 const Footer = async () => {
-    const repoStats = await fetch(
-        'https://api.github.com/repos/ManishPrakkash',
-        {
-            next: {
-                revalidate: 60 * 60, // 1 hour
+    let stargazers_count = 0;
+    let forks_count = 0;
+    try {
+        const repoStats = await fetch(
+            'https://api.github.com/repos/ManishPrakkash',
+            {
+                next: {
+                    revalidate: 60 * 60, // 1 hour
+                },
             },
-        },
-    );
-
-    const { stargazers_count, forks_count } =
-        (await repoStats.json()) as RepoStats;
+        );
+        if (repoStats.ok) {
+            const data = (await repoStats.json()) as RepoStats;
+            stargazers_count = data.stargazers_count || 0;
+            forks_count = data.forks_count || 0;
+        }
+    } catch (e) {
+        // fallback to 0 if fetch fails
+    }
 
     return (
         <footer className="text-center pb-5" id="contact">

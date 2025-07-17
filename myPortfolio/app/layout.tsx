@@ -63,7 +63,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <ClientScripts />
+            {/* <ClientScripts /> */}
             <body
                 className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
             >
