@@ -59,7 +59,7 @@ const Banner = () => {
                             as="link"
                             target="_blank"
                             rel="noopener noreferrer"
-                            href={GENERAL_INFO.upworkProfile}
+                            href="https://www.linkedin.com/in/manish-prakkash-03b3a931a/"
                             variant="primary"
                             className="banner-button slide-up-and-fade"
                         >
