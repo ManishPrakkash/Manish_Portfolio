@@ -7,7 +7,7 @@ export const GENERAL_INFO = {
     emailBody: 'Hi Manish, I am reaching out to you because...',
 
     
-    upworkProfile: 'https://www.upwork.com/freelancers/manishprakkash',
+    upworkProfile: 'https://www.linkedin.com/in/manish-prakkash-03b3a931a/',
     cvDownload: '/cv/Manish-Prakkash-CV.pdf',
 };
 
