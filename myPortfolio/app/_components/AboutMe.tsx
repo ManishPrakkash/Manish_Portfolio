@@ -73,7 +73,7 @@ const AboutMe = () => {
                     <div className="md:col-span-7">
                         <div className="text-lg text-muted-foreground max-w-[450px]">
                             <p className="slide-up-and-fade">
-                                I&apos;m I&apos;m a React developer and a 2nd-year CSE student, passionate about building
+                                {/* I&apos;m a React developer and A */}2nd-year CSE student, passionate about building 
                                  seamless, responsive, and user-focused web applications. I specialize in creating 
                                  intuitive interfaces using React while also expanding my skills in backend development 
                                  through the MERN stack.

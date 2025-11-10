@@ -126,7 +126,7 @@ export const MY_EXPERIENCE = [
     {
         title: 'Web Developer',
         company: 'Cognifyz Technologies',
-        duration: 'Jul 2025 - Present',
+        duration: 'Jul 2025',
     },
 
 ];

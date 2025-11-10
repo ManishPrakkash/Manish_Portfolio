@@ -42,15 +42,15 @@ const Banner = () => {
             >
                 <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-[544px]">
                     <h1 className="banner-title slide-up-and-fade leading-[.95] text-6xl sm:text-[80px] font-anton">
-                        <span className="text-primary">REACT</span>
-                        <br /> <span className="ml-4">DEVELOPER</span>
+                        <span className="text-primary">FULL STACK</span>
+                        <br /> <span className="ml-7">DEVELOPER</span>
                     </h1>
                     <p className="banner-description slide-up-and-fade mt-6 text-lg text-muted-foreground">
                         Hi! I&apos;m{' '}
                         <span className="font-medium text-foreground">
                             MANISH PRAKKASH
                         </span>
-                        . A creative React Developer with 1+ years of
+                        . A creative Full Stack Developer with 1+ years of
                         experience in building high-performance, scalable, and
                         responsive web solutions.
                     </p>
