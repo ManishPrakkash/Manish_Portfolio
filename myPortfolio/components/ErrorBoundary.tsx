@@ -14,7 +14,9 @@ class ErrorBoundary extends Component<Props, State> {
         hasError: false,
     };
 
-    public static getDerivedStateFromError(_error: Error): State {
+    public static getDerivedStateFromError(error: Error): State {
+        // Mark parameter as used to satisfy lint without side effects
+        void error;
         return { hasError: true };
     }
 
