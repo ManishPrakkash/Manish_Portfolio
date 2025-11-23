@@ -73,18 +73,21 @@ const AboutMe = () => {
                     <div className="md:col-span-7">
                         <div className="text-lg text-muted-foreground max-w-[450px]">
                             <p className="slide-up-and-fade">
-                                {/* I&apos;m a React developer and A */}2nd-year CSE student, passionate about building 
-                                 seamless, responsive, and user-focused web applications. I specialize in creating 
-                                 intuitive interfaces using React while also expanding my skills in backend development 
-                                 through the MERN stack.
-
-
+                                I&apos;m a React developer and a 2nd-year CSE
+                                student, passionate about building seamless,
+                                responsive, and user-focused web applications. I
+                                specialize in creating intuitive interfaces
+                                using React while also expanding my skills in
+                                backend development through the MERN stack.
                             </p>
                             <p className="mt-3 slide-up-and-fade">
-                            My goal is to deliver scalable, high-performance solutions that align with 
-                            both user needs and business objectives. With a strong focus on performance, 
-                            accessibility, and clean code architecture, I strive to create full-stack applications
-                             that are not only functional but also impactful.
+                                My goal is to deliver scalable, high-performance
+                                solutions that align with both user needs and
+                                business objectives. With a strong focus on
+                                performance, accessibility, and clean code
+                                architecture, I strive to create full-stack
+                                applications that are not only functional but
+                                also impactful.
                             </p>
                         </div>
                     </div>
