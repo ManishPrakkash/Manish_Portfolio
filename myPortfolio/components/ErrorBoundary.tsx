@@ -14,7 +14,7 @@ class ErrorBoundary extends Component<Props, State> {
         hasError: false,
     };
 
-    public static getDerivedStateFromError(): State {
+    public static getDerivedStateFromError(_: Error): State {
         return { hasError: true };
     }
 
