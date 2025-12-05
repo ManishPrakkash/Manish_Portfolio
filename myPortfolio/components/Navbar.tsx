@@ -103,7 +103,7 @@ const Navbar = () => {
                                         <a
                                             href={link.url}
                                             target="_blank"
-                                            rel="noreferrer"
+                                            rel="noopener noreferrer"
                                             className="text-lg capitalize hover:underline"
                                         >
                                             {link.name}

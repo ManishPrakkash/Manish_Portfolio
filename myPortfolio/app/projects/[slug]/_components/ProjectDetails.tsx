@@ -113,7 +113,7 @@ const ProjectDetails = ({ project }: Props) => {
                                     <a
                                         href={project.sourceCode}
                                         target="_blank"
-                                        rel="noreferrer noopener"
+                                        rel="noopener noreferrer"
                                         className="hover:text-primary"
                                     >
                                         <Github size={30} />
@@ -123,7 +123,7 @@ const ProjectDetails = ({ project }: Props) => {
                                     <a
                                         href={project.liveUrl}
                                         target="_blank"
-                                        rel="noreferrer noopener"
+                                        rel="noopener noreferrer"
                                         className="hover:text-primary"
                                     >
                                         <ExternalLink size={30} />
@@ -193,6 +193,7 @@ const ProjectDetails = ({ project }: Props) => {
                             <a
                                 href={image}
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 className="absolute top-4 right-4 bg-background/70 text-foreground size-12 inline-flex justify-center items-center transition-all opacity-0 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100"
                             >
                                 <ExternalLink />

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Anton, Roboto_Flex } from 'next/font/google';
 import { ReactLenis } from 'lenis/react';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import 'lenis/dist/lenis.css';
 import './globals.css';
@@ -11,6 +12,7 @@ import Navbar from '@/components/Navbar';
 import CustomCursor from '@/components/CustomCursor';
 import Preloader from '../components/Preloader';
 import StickyEmail from './_components/StickyEmail';
+import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
 
 const antonFont = Anton({
     weight: '400',
@@ -27,24 +29,24 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-    title: 'Manish Prakash - Full Stack Developer Portfolio',
-    description: 'Full Stack Developer specializing in React, Node.js, and modern web technologies. View my projects, skills, and experience.',
+    title: 'Manish Prakkash - Full Stack MERN Developer Portfolio',
+    description: 'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript. Explore my projects and skills.',
     keywords: ['Full Stack Developer', 'React', 'Node.js', 'JavaScript', 'TypeScript', 'Portfolio'],
     authors: [{ name: 'Manish Prakash' }],
     creator: 'Manish Prakash',
     publisher: 'Manish Prakash',
     robots: 'index, follow',
     openGraph: {
-        title: 'Manish Prakash - Full Stack Developer Portfolio',
-        description: 'Full Stack Developer specializing in React, Node.js, and modern web technologies.',
+        title: 'Manish Prakkash - Full Stack MERN Developer Portfolio',
+        description: 'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript.',
         type: 'website',
         locale: 'en_US',
         siteName: 'Manish Prakash Portfolio',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Manish Prakash - Full Stack Developer Portfolio',
-        description: 'Full Stack Developer specializing in React, Node.js, and modern web technologies.',
+        title: 'Manish Prakkash - Full Stack MERN Developer Portfolio',
+        description: 'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript.',
     },
 };
 
@@ -60,9 +62,37 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Manish Prakkash',
+        jobTitle: 'Full Stack MERN Developer',
+        url: 'https://manishprakkashms.vercel.app',
+        sameAs: SOCIAL_LINKS.map(link => link.url),
+        knowsAbout: [
+            'React',
+            'TypeScript',
+            'Node.js',
+            'MongoDB',
+            'Express',
+            'Tailwind CSS',
+            'Firebase',
+            'JavaScript',
+            'Full Stack Development',
+            'MERN Stack'
+        ],
+        email: GENERAL_INFO.email,
+    };
+
     return (
         <html lang="en">
-            {/* <ClientScripts /> */}
+            <head>
+                <link rel="canonical" href="https://manishprakkashms.vercel.app/" />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+                />
+            </head>
             <body
                 className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
             >
@@ -84,6 +114,7 @@ export default function RootLayout({
                     <ParticleBackground />
                     <StickyEmail />
                 </ReactLenis>
+                <GoogleAnalytics gaId="G-XXXXXXXXXX" />
             </body>
         </html>
     );

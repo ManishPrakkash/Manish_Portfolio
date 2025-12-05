@@ -40,6 +40,7 @@ const Footer = async () => {
                     <a
                         href="https://github.com/ManishPrakkash"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="leading-none text-muted-foreground hover:underline hover:text-white"
                     >
                         Design & built by Manish Prakkash

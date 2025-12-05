@@ -1,0 +1,8 @@
+# robots.txt for Manish Prakkash Portfolio
+# Allow all crawlers to index the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://manishprakkashms.vercel.app/sitemap.xml

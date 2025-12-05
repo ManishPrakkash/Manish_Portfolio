@@ -71,37 +71,41 @@ export const PROJECTS: IProject[] = [
         liveUrl: 'https://fitrack-lime.vercel.app/', 
         year: 2025,
         description: `
-  A fitness tracking web application with a React frontend and Django backend, designed for personalized health monitoring and secure data management. <br/> <br/>
+  <strong>Problem:</strong> Fitness enthusiasts needed a centralized platform to track health metrics, manage profiles, and securely store personal fitness data with seamless authentication.<br/><br/>
 
-  Key Features:<br/>
+  <strong>Solution:</strong> Built Fitrack, a full-stack fitness tracking application combining React frontend with Django REST API backend, featuring JWT-based authentication and real-time MongoDB Atlas integration for personalized health monitoring.<br/><br/>
+
+  <strong>Key Features:</strong><br/>
   <ul>
-    <li>🔐 Authentication: Secure login/signup using JWT-based token system</li>
-    <li>👤 Profile Management: Users can manage and update their fitness profile</li>
-    <li>📊 Data Storage: Real-time data handling with MongoDB Atlas integration</li>
-    <li>🌐 REST API: Django-powered RESTful endpoints for seamless frontend-backend interaction</li>
-    <li>🔒 Secure Credentials: Passwords are hashed and stored securely</li>
-    <li>🔗 CORS Setup: Cross-origin requests enabled for React-Django communication</li>
+    <li>🔐 <strong>Authentication:</strong> Secure login/signup using JWT-based token system with refresh tokens for persistent sessions</li>
+    <li>👤 <strong>Profile Management:</strong> Users can manage and update their fitness profile with real-time data synchronization</li>
+    <li>📊 <strong>Data Storage:</strong> Real-time data handling with MongoDB Atlas integration using Djongo/MongoEngine</li>
+    <li>🌐 <strong>REST API:</strong> Django-powered RESTful endpoints for seamless frontend-backend interaction</li>
+    <li>🔒 <strong>Secure Credentials:</strong> Passwords are hashed and stored securely following industry best practices</li>
+    <li>🔗 <strong>CORS Setup:</strong> Cross-origin requests enabled for React-Django communication via Axios</li>
   </ul><br/>
 
-  Technical Highlights:
+  <strong>Technical Implementation:</strong>
   <ul>
-    <li>Connected Django with MongoDB Atlas using Djongo/MongoEngine</li>
-    <li>Implemented JWT authentication with refresh tokens for persistent sessions</li>
-    <li>Built dynamic frontend components using React and Tailwind CSS</li>
+    <li>Connected Django with MongoDB Atlas using Djongo/MongoEngine for NoSQL data modeling</li>
+    <li>Implemented JWT authentication with refresh tokens for persistent, secure sessions</li>
+    <li>Built dynamic, responsive frontend components using React and Tailwind CSS</li>
     <li>Configured and consumed APIs via Axios with state-managed responses</li>
-    <li>Modular project architecture with clear separation between frontend and backend</li>
-  </ul>
+    <li>Modular project architecture with clear separation between frontend and backend layers</li>
+  </ul><br/>
+
+  <strong>Impact:</strong> Delivered a production-ready fitness tracking platform with enterprise-grade security, scalable architecture, and seamless user experience across authentication, data management, and profile customization.
 `,
         role: `
-  Full-Stack Developer <br/>
-  Led the full development and integration process:
+  <strong>Full-Stack Developer</strong><br/>
+  Led end-to-end development and integration:<br/>
   <ul>
-    <li>✅ Backend: Developed Django REST API and connected to MongoDB Atlas</li>
-    <li>🔐 Auth System: Implemented JWT-based secure login and signup system</li>
-    <li>📁 Models: Designed MongoDB schemas for storing user and fitness data</li>
-    <li>🎨 Frontend: Built a clean, responsive UI using React, Tailwind CSS</li>
-    <li>🔄 Data Handling: Used Axios for API calls and managed client-side state</li>
-    <li>🛠️ Deployment Ready: Structured codebase for deployment readiness (CI/CD optional)</li>
+    <li>✅ <strong>Backend:</strong> Developed Django REST API and connected to MongoDB Atlas with secure data models</li>
+    <li>🔐 <strong>Auth System:</strong> Implemented JWT-based secure login and signup system with token refresh</li>
+    <li>📁 <strong>Models:</strong> Designed MongoDB schemas for storing user and fitness data with validation</li>
+    <li>🎨 <strong>Frontend:</strong> Built a clean, responsive UI using React and Tailwind CSS with modern design patterns</li>
+    <li>🔄 <strong>Data Handling:</strong> Used Axios for API calls and managed client-side state efficiently</li>
+    <li>🛠️ <strong>Deployment Ready:</strong> Structured codebase for deployment readiness with modular architecture</li>
   </ul>
 `,
         techStack: [

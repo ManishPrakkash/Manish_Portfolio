@@ -1,12 +1,29 @@
 import type { MetadataRoute } from 'next';
+import { PROJECTS } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    return [
+    const baseUrl = 'https://manishprakkashms.vercel.app';
+
+    // Homepage
+    const routes: MetadataRoute.Sitemap = [
         {
-            url: 'https://me.toinfinite.dev',
+            url: baseUrl,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'weekly',
             priority: 1,
         },
     ];
+
+    // Project pages
+    PROJECTS.forEach((project) => {
+        routes.push({
+            url: `${baseUrl}/projects/${project.slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        });
+    });
+
+    return routes;
 }
+
