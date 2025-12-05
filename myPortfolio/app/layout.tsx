@@ -29,6 +29,7 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://manishprakkashms.vercel.app'),
     title: 'Manish Prakkash - Full Stack MERN Developer Portfolio',
     description: 'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript. Explore my projects and skills.',
     keywords: ['Full Stack Developer', 'React', 'Node.js', 'JavaScript', 'TypeScript', 'Portfolio'],
@@ -36,9 +37,13 @@ export const metadata: Metadata = {
     creator: 'Manish Prakash',
     publisher: 'Manish Prakash',
     robots: 'index, follow',
+    alternates: {
+        canonical: '/',
+    },
     openGraph: {
         title: 'Manish Prakkash - Full Stack MERN Developer Portfolio',
         description: 'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript.',
+        url: 'https://manishprakkashms.vercel.app',
         type: 'website',
         locale: 'en_US',
         siteName: 'Manish Prakash Portfolio',
@@ -57,45 +62,44 @@ export const viewport = {
 
 export const themeColor = '#000000';
 
+const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Manish Prakkash',
+    jobTitle: 'Full Stack MERN Developer',
+    url: 'https://manishprakkashms.vercel.app',
+    sameAs: SOCIAL_LINKS.map(link => link.url),
+    knowsAbout: [
+        'React',
+        'TypeScript',
+        'Node.js',
+        'MongoDB',
+        'Express',
+        'Tailwind CSS',
+        'Firebase',
+        'JavaScript',
+        'Full Stack Development',
+        'MERN Stack'
+    ],
+    email: GENERAL_INFO.email,
+};
+
 export default function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const structuredData = {
-        '@context': 'https://schema.org',
-        '@type': 'Person',
-        name: 'Manish Prakkash',
-        jobTitle: 'Full Stack MERN Developer',
-        url: 'https://manishprakkashms.vercel.app',
-        sameAs: SOCIAL_LINKS.map(link => link.url),
-        knowsAbout: [
-            'React',
-            'TypeScript',
-            'Node.js',
-            'MongoDB',
-            'Express',
-            'Tailwind CSS',
-            'Firebase',
-            'JavaScript',
-            'Full Stack Development',
-            'MERN Stack'
-        ],
-        email: GENERAL_INFO.email,
-    };
 
     return (
         <html lang="en">
-            <head>
-                <link rel="canonical" href="https://manishprakkashms.vercel.app/" />
+            <body
+                className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
+                suppressHydrationWarning
+            >
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
                 />
-            </head>
-            <body
-                className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
-            >
                 <ReactLenis
                     root
                     options={{
@@ -114,8 +118,8 @@ export default function RootLayout({
                     <ParticleBackground />
                     <StickyEmail />
                 </ReactLenis>
-                <GoogleAnalytics gaId="G-XXXXXXXXXX" />
             </body>
+            <GoogleAnalytics gaId="G-MBGQG95ZVK" />
         </html>
     );
 }
