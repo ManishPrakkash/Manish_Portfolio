@@ -61,14 +61,17 @@ const Skills = () => {
         <section id="my-stack" ref={containerRef}>
             <div className="container">
                 <SectionTitle title="My Stack" />
+                <p className="mt-6 mb-12 text-lg text-muted-foreground max-w-3xl">
+                    A production‑focused <strong>MERN / TypeScript</strong> toolkit covering <strong>frontend performance</strong>, <strong>accessibility</strong>, <strong>API design</strong>, and <strong>database modeling</strong>. Each technology is selected to accelerate development while keeping deployments secure, maintainable, and SEO‑friendly.
+                </p>
 
                 <div className="space-y-20">
                     {Object.entries(MY_STACK).map(([key, value]) => (
                         <div className="grid sm:grid-cols-12" key={key}>
                             <div className="sm:col-span-5">
-                                <p className="slide-up text-5xl font-anton leading-none text-muted-foreground uppercase">
+                                <h3 className="slide-up text-5xl font-anton leading-none text-muted-foreground uppercase">
                                     {key}
-                                </p>
+                                </h3>
                             </div>
 
                             <div className="sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap">

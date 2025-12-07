@@ -54,11 +54,21 @@ const AboutMe = () => {
     return (
         <section className="pb-section" id="about-me">
             <div className="container" ref={container}>
-                <h2 className="text-4xl md:text-6xl font-thin mb-20 slide-up-and-fade">
-                    I believe in a user centered design approach, ensuring that
-                    every project I work on is tailored to meet the specific
-                    needs of its users.
+                <h2 className="text-4xl md:text-6xl font-thin mb-12 slide-up-and-fade">
+                    Full Stack MERN & React.js Developer focused on
+                    user‑centered design and scalable, performant web
+                    applications.
                 </h2>
+                <p className="text-lg md:text-xl mb-16 slide-up-and-fade text-muted-foreground max-w-3xl">
+                    I craft responsive, accessible interfaces with{' '}
+                    <strong>React.js</strong>, implement secure APIs using{' '}
+                    <strong>Node.js</strong> & <strong>Express</strong>,
+                    optimize data flows with <strong>MongoDB</strong>, and
+                    leverage <strong>Next.js</strong> for server‑side rendering,
+                    SEO, and performance. My approach blends clean architecture,
+                    semantic Design, progressive enhancement, and measurable
+                    performance budgets to deliver real business value.
+                </p>
 
                 <p className="pb-3 border-b text-muted-foreground slide-up-and-fade">
                     This is me.
@@ -66,28 +76,32 @@ const AboutMe = () => {
 
                 <div className="grid md:grid-cols-12 mt-9">
                     <div className="md:col-span-5">
-                        <p className="text-5xl slide-up-and-fade">
+                        <h3 className="text-5xl slide-up-and-fade font-anton">
                             Hi, I&apos;m Manish Prakkash
-                        </p>
+                        </h3>
                     </div>
                     <div className="md:col-span-7">
                         <div className="text-lg text-muted-foreground max-w-[450px]">
                             <p className="slide-up-and-fade">
-                                I&apos;m a React developer and a 2nd-year CSE
-                                student, passionate about building seamless,
-                                responsive, and user-focused web applications. I
-                                specialize in creating intuitive interfaces
-                                using React while also expanding my skills in
-                                backend development through the MERN stack.
+                                I&apos;m a <strong>MERN stack developer</strong>{' '}
+                                and 2nd‑year CSE student, building seamless,
+                                responsive, user‑focused web experiences. I
+                                specialize in intuitive UI development with{' '}
+                                <strong>React</strong> &{' '}
+                                <strong>Next.js</strong> while expanding backend
+                                expertise across <strong>Node.js</strong>,{' '}
+                                <strong>Express</strong>, and{' '}
+                                <strong>MongoDB</strong>.
                             </p>
                             <p className="mt-3 slide-up-and-fade">
-                                My goal is to deliver scalable, high-performance
-                                solutions that align with both user needs and
-                                business objectives. With a strong focus on
-                                performance, accessibility, and clean code
-                                architecture, I strive to create full-stack
-                                applications that are not only functional but
-                                also impactful.
+                                I focus on <strong>scalability</strong>,{' '}
+                                <strong>performance optimization</strong> (Core
+                                Web Vitals), <strong>accessibility</strong>, and
+                                maintainable code architecture. I enjoy
+                                translating product requirements into reliable,
+                                testable full‑stack solutions with JWT
+                                authentication, RESTful APIs, efficient state
+                                management, and data modeling.
                             </p>
                         </div>
                     </div>

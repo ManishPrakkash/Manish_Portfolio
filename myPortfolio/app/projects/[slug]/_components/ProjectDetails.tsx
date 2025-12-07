@@ -8,6 +8,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 interface Props {
     project: IProject;
@@ -62,24 +63,27 @@ const ProjectDetails = ({ project }: Props) => {
         { scope: containerRef },
     );
 
-    // parallax effect on images
+    // parallax effect on images now using actual <Image /> elements
     useGSAP(
         () => {
-            gsap.utils
-                .toArray<HTMLDivElement>('#images > div')
-                .forEach((imageDiv) => {
-                    gsap.to(imageDiv, {
-                        backgroundPosition: `center 0%`,
+            const imageEls =
+                gsap.utils.toArray<HTMLImageElement>('#images img');
+            imageEls.forEach((img) => {
+                gsap.fromTo(
+                    img,
+                    { y: 40 },
+                    {
+                        y: -40,
                         ease: 'none',
                         scrollTrigger: {
-                            trigger: imageDiv,
+                            trigger: img.parentElement!,
                             start: 'top bottom',
                             end: 'bottom top',
                             scrub: true,
-                            // invalidateOnRefresh: true, // to make it responsive
                         },
-                    });
-                });
+                    },
+                );
+            });
         },
         { scope: containerRef },
     );
@@ -113,7 +117,7 @@ const ProjectDetails = ({ project }: Props) => {
                                     <a
                                         href={project.sourceCode}
                                         target="_blank"
-                                        rel="noopener noreferrer"
+                                        rel="noreferrer noopener"
                                         className="hover:text-primary"
                                     >
                                         <Github size={30} />
@@ -123,7 +127,7 @@ const ProjectDetails = ({ project }: Props) => {
                                     <a
                                         href={project.liveUrl}
                                         target="_blank"
-                                        rel="noopener noreferrer"
+                                        rel="noreferrer noopener"
                                         className="hover:text-primary"
                                     >
                                         <ExternalLink size={30} />
@@ -179,21 +183,24 @@ const ProjectDetails = ({ project }: Props) => {
                     className="fade-in-later relative flex flex-col gap-2 max-w-[800px] mx-auto"
                     id="images"
                 >
-                    {project.images.map((image) => (
+                    {project.images.map((image, i) => (
                         <div
                             key={image}
-                            className="group relative w-full aspect-[750/400] bg-background-light"
-                            style={{
-                                backgroundImage: `url(${image})`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center 50%',
-                                backgroundRepeat: 'no-repeat',
-                            }}
+                            className="group relative w-full aspect-[750/400] overflow-hidden rounded-sm bg-background-light"
                         >
+                            <Image
+                                src={image}
+                                alt={`${project.title} screenshot ${i + 1}`}
+                                fill
+                                sizes="(max-width: 800px) 100vw, 800px"
+                                priority={i === 0}
+                                loading={i === 0 ? 'eager' : 'lazy'}
+                                className="object-cover will-change-transform select-none"
+                            />
                             <a
                                 href={image}
                                 target="_blank"
-                                rel="noopener noreferrer"
+                                rel="noreferrer noopener"
                                 className="absolute top-4 right-4 bg-background/70 text-foreground size-12 inline-flex justify-center items-center transition-all opacity-0 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100"
                             >
                                 <ExternalLink />

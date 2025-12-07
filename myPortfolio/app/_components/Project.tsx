@@ -110,7 +110,7 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
             {selectedProject === null && (
                 <Image
                     src={project.thumbnail}
-                    alt="Project"
+                    alt={`${project.title} project thumbnail showcasing ${project.techStack.slice(0,3).join(', ')}`}
                     width="300"
                     height="200"
                     className={cn(
@@ -149,7 +149,7 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                             </svg>
                         </span>
                     </h4>
-                    <div className="mt-2 flex flex-wrap gap-3 text-muted-foreground text-xs">
+                    <div className="mt-2 flex flex-wrap gap-3 text-muted-foreground text-xs" aria-label="Key technologies used">
                         {project.techStack
                             .slice(0, 3)
                             .map((tech, idx, stackArr) => (
