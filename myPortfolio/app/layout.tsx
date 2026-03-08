@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Anton, Roboto_Flex } from 'next/font/google';
 import { ReactLenis } from 'lenis/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/next';
 
 import 'lenis/dist/lenis.css';
 import './globals.css';
@@ -129,6 +130,7 @@ export default function RootLayout({
                     <Preloader />
                     <StickyEmail />
                 </ReactLenis>
+                <Analytics />
             </body>
             <GoogleAnalytics gaId="G-MBGQG95ZVK" />
         </html>
