@@ -130,6 +130,7 @@ export default function RootLayout({
                     <Preloader />
                     <StickyEmail />
                 </ReactLenis>
+                <Analytics />
             </body>
             <GoogleAnalytics gaId="G-MBGQG95ZVK" />
             <Analytics />
