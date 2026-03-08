@@ -35,15 +35,14 @@ Object.defineProperty(window, 'matchMedia', {
 })
 
 // Mock IntersectionObserver
-global.IntersectionObserver = class IntersectionObserver {
-    constructor() { }
-    disconnect() { }
-    observe() { }
-    takeRecords() {
-        return []
+global.IntersectionObserver = jest.fn().mockImplementation((callback) => {
+    return {
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+        takeRecords: jest.fn(() => []),
     }
-    unobserve() { }
-}
+})
 
 // Suppress GSAP warnings in tests
 global.console = {
