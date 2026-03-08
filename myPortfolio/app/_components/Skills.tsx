@@ -23,7 +23,7 @@ const Skills = () => {
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: 'top 80%',
-                    end: 'bottom 80%',
+                    end: 'bottom 40%',
                     scrub: 0.5,
                 },
             });
@@ -32,7 +32,7 @@ const Skills = () => {
                 opacity: 0,
                 y: 40,
                 ease: 'none',
-                stagger: 0.4,
+                stagger: 0.05,
             });
         },
         { scope: containerRef },
@@ -43,7 +43,7 @@ const Skills = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'bottom 50%',
+                    start: 'bottom 40%',
                     end: 'bottom 10%',
                     scrub: 1,
                 },
@@ -80,14 +80,37 @@ const Skills = () => {
                                         className="slide-up flex gap-3.5 items-center leading-none"
                                         key={item.name}
                                     >
-                                        <div>
-                                            <Image
-                                                src={item.icon}
-                                                alt={item.name}
-                                                width="40"
-                                                height="40"
-                                                className="max-h-10"
-                                            />
+                                        <div className="w-10 h-10 flex items-center justify-center">
+                                            {item.name === 'Docker' ? (
+                                                <div
+                                                    style={{
+                                                        backgroundColor: '#1D63ED',
+                                                        borderRadius: '8px',
+                                                        padding: '6px',
+                                                        width: '40px',
+                                                        height: '40px',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                    }}
+                                                >
+                                                    <Image
+                                                        src={item.icon}
+                                                        alt={item.name}
+                                                        width={28}
+                                                        height={28}
+                                                        className="w-auto"
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <Image
+                                                    src={item.icon}
+                                                    alt={item.name}
+                                                    width={item.name === 'Postman' ? 52 : 40}
+                                                    height={item.name === 'Postman' ? 52 : 40}
+                                                    className="max-h-10 w-auto"
+                                                />
+                                            )}
                                         </div>
                                         <span className="text-2xl capitalize">
                                             {item.name}

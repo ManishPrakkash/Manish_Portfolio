@@ -21,18 +21,24 @@ export const SOCIAL_LINKS = [
 export const MY_STACK = {
     frontend: [
         {
-            name: 'Javascript',
-            icon: '/logo/js.png',
+            name: 'TypeScript',
+            icon: '/logo/ts.png',
         },
-
         {
             name: 'React',
             icon: '/logo/react.png',
         },
-
+        {
+            name: 'Next.js',
+            icon: '/logo/next.png',
+        },
         {
             name: 'Tailwind CSS',
             icon: '/logo/tailwind.png',
+        },
+        {
+            name: 'Framer Motion',
+            icon: '/logo/newFramermotion.png',
         },
     ],
     backend: [
@@ -44,11 +50,27 @@ export const MY_STACK = {
             name: 'Express.js',
             icon: '/logo/express.png',
         },
+        {
+            name: 'Nest.js',
+            icon: '/logo/nest.svg',
+        },
+        {
+            name: 'AWS',
+            icon: '/logo/aws.png',
+        },
     ],
     database: [
         {
             name: 'MongoDB',
             icon: '/logo/mongodb.svg',
+        },
+        {
+            name: 'PostgreSQL',
+            icon: '/logo/postgreSQL.png',
+        },
+        {
+            name: 'Prisma',
+            icon: '/logo/prisma.png',
         },
     ],
     tools: [
@@ -57,8 +79,16 @@ export const MY_STACK = {
             icon: '/logo/git.png',
         },
         {
+            name: 'npm',
+            icon: '/logo/npm.svg',
+        },
+        {
             name: 'Postman',
             icon: '/logo/postman.svg',
+        },
+        {
+            name: 'Docker',
+            icon: '/logo/docker.svg',
         },
     ],
 };

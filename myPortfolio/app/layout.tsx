@@ -1,16 +1,15 @@
 import type { Metadata } from 'next';
 import { Anton, Roboto_Flex } from 'next/font/google';
-import { ReactLenis } from 'lenis/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
 
-import 'lenis/dist/lenis.css';
 import './globals.css';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Preloader from '../components/Preloader';
 import StickyEmail from './_components/StickyEmail';
 import ClientLayout from '@/components/ClientLayout';
+import SmoothScroll from '@/components/SmoothScroll';
 import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
 import { RESOURCE_HINTS } from '@/lib/performance';
 
@@ -114,14 +113,7 @@ export default function RootLayout({
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
                 />
-                <ReactLenis
-                    root
-                    options={{
-                        lerp: 0.1,
-                        duration: 1.4,
-                    }}
-                >
-
+                <SmoothScroll>
                     <Navbar />
                     <main>{children}</main>
                     <Footer />
@@ -129,7 +121,7 @@ export default function RootLayout({
                     <ClientLayout />
                     <Preloader />
                     <StickyEmail />
-                </ReactLenis>
+                </SmoothScroll>
             </body>
             <GoogleAnalytics gaId="G-MBGQG95ZVK" />
             <Analytics />
