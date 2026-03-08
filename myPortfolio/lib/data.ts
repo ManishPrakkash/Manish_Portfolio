@@ -6,15 +6,16 @@ export const GENERAL_INFO = {
     emailSubject: "Let's collaborate on a project",
     emailBody: 'Hi Manish, I am reaching out to you because...',
 
-    
     upworkProfile: 'https://www.linkedin.com/in/manish-prakkash-03b3a931a/',
     cvDownload: '/cv/Manish-Prakkash-CV.pdf',
 };
 
 export const SOCIAL_LINKS = [
     { name: 'github', url: 'https://github.com/ManishPrakkash' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/manish-prakkash-03b3a931a/' },
-
+    {
+        name: 'linkedin',
+        url: 'https://www.linkedin.com/in/manish-prakkash-03b3a931a/',
+    },
 ];
 
 export const MY_STACK = {
@@ -33,7 +34,6 @@ export const MY_STACK = {
             name: 'Tailwind CSS',
             icon: '/logo/tailwind.png',
         },
-
     ],
     backend: [
         {
@@ -60,7 +60,6 @@ export const MY_STACK = {
             name: 'Postman',
             icon: '/logo/postman.svg',
         },
-    
     ],
 };
 
@@ -68,7 +67,7 @@ export const PROJECTS: IProject[] = [
     {
         title: 'Fitrack Application',
         slug: 'fitrack-application',
-        liveUrl: 'https://fitrack-lime.vercel.app/', 
+        liveUrl: 'https://fitrack-lime.vercel.app/',
         year: 2025,
         description: `
   <strong>Problem:</strong> Fitness enthusiasts needed a centralized platform to track health metrics, manage profiles, and securely store personal fitness data with seamless authentication.<br/><br/>
@@ -132,5 +131,4 @@ export const MY_EXPERIENCE = [
         company: 'Cognifyz Technologies',
         duration: 'Jul 2025',
     },
-
 ];
