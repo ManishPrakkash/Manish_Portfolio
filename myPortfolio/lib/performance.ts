@@ -1,89 +1,113 @@
-// Performance optimization utilities
+/**
+ * Performance optimization utilities
+ * 
+ * This module provides utilities for optimizing web performance across:
+ * - Maintainability: Centralized configuration and utilities
+ * - Performance: Asset loading optimization
+ * - Scalability: Easy to extend with new optimizations
+ * - Testability: All functions are pure and mockable
+ */
 
-export const preloadImage = (src: string): Promise<void> => {
-    return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => resolve();
-        img.onerror = () =>
-            reject(new Error(`Failed to preload image: ${src}`));
-        img.src = src;
-    });
-};
+/**
+ * Critical resources that should be preloaded for fast initial render
+ */
+export const CRITICAL_RESOURCES = {
+    fonts: [
+        // Preload critical font weights only
+        { family: 'Anton', weight: '400' },
+        { family: 'Roboto Flex', weight: '400' },
+    ],
+    images: [
+        // Above-the-fold images that need immediate loading
+        '/projects/thumbnail/fitrack.png',
+    ],
+} as const;
 
-export const preloadImages = async (srcs: string[]): Promise<void> => {
-    const promises = srcs.map((src) => preloadImage(src));
-    await Promise.all(promises);
-};
+/**
+ * Resources that can be deferred until after initial render
+ */
+export const DEFERRED_RESOURCES = {
+    components: [
+        'ParticleBackground',
+        'CustomCursor',
+        'ScrollProgressIndicator',
+    ],
+    scripts: [
+        // Analytics and non-critical third-party scripts
+        'googletagmanager',
+    ],
+} as const;
 
-// Lazy loading utility
-export const lazyLoad = (element: HTMLElement, callback: () => void) => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                callback();
-                observer.unobserve(element);
-            }
-        });
-    });
+/**
+ * Image optimization configuration
+ * Reduces HTTP requests by defining optimal loading strategies
+ */
+export const IMAGE_OPTIMIZATION = {
+    // Use blur placeholder for images above the fold
+    usePlaceholder: true,
+    // Lazy load images below the fold
+    lazyLoadThreshold: '200px',
+    // Preferred formats in order of preference
+    formats: ['avif', 'webp', 'png'] as const,
+} as const;
 
-    observer.observe(element);
-};
+/**
+ * Checks if the client is on a slow connection
+ * Helps with adaptive loading strategies
+ */
+export function isSlowConnection(): boolean {
+    if (typeof navigator === 'undefined') return false;
+    
+    const connection = (navigator as any).connection;
+    if (!connection) return false;
+    
+    return connection.effectiveType === '2g' || 
+           connection.effectiveType === 'slow-2g' ||
+           connection.saveData === true;
+}
 
-// Debounce utility for performance
-export const debounce = <T extends (..._args: any[]) => any>(
-    func: T,
-    wait: number,
-): ((..._args: Parameters<T>) => void) => {
-    let timeout: NodeJS.Timeout;
+/**
+ * Checks if reduced motion is preferred
+ * Important for accessibility and performance
+ */
+export function prefersReducedMotion(): boolean {
+    if (typeof window === 'undefined') return false;
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
 
-    return (..._args: Parameters<T>) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func(..._args), wait);
-    };
-};
+/**
+ * Generates optimized structured data JSON
+ * Minifies the output to reduce HTML size
+ */
+export function generateStructuredData(data: Record<string, unknown>): string {
+    // Minify by removing unnecessary whitespace
+    return JSON.stringify(data);
+}
 
-// Throttle utility for performance
-export const throttle = <T extends (..._args: any[]) => any>(
-    func: T,
-    limit: number,
-): ((..._args: Parameters<T>) => void) => {
-    let inThrottle: boolean;
+/**
+ * Resource hints configuration for better loading performance
+ */
+export const RESOURCE_HINTS = {
+    preconnect: [
+        'https://fonts.googleapis.com',
+        'https://fonts.gstatic.com',
+    ],
+    dnsPrefetch: [
+        'https://www.googletagmanager.com',
+    ],
+} as const;
 
-    return (..._args: Parameters<T>) => {
-        if (!inThrottle) {
-            func(..._args);
-            inThrottle = true;
-            setTimeout(() => (inThrottle = false), limit);
-        }
-    };
-};
-
-// Performance monitoring
-export const measurePerformance = (name: string, fn: () => void) => {
-    const start = performance.now();
-    fn();
-    const end = performance.now();
-    console.log(`${name} took ${end - start} milliseconds`);
-};
-
-// Resource hints for better performance
-export const addResourceHints = () => {
-    const links = [
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        {
-            rel: 'preconnect',
-            href: 'https://fonts.gstatic.com',
-            crossOrigin: 'anonymous',
-        },
-        { rel: 'dns-prefetch', href: 'https://www.google-analytics.com' },
-        { rel: 'dns-prefetch', href: 'https://static.hotjar.com' },
-    ];
-
-    links.forEach(({ rel, href, crossOrigin }) => {
-        const link = document.createElement('link');
-        link.rel = rel;
-        link.href = href;
-        if (crossOrigin) link.crossOrigin = crossOrigin;
-        document.head.appendChild(link);
-    });
-};
+/**
+ * Particle configuration based on device performance
+ * Reduces particles on mobile/slow devices
+ */
+export function getOptimalParticleCount(): number {
+    if (typeof window === 'undefined') return 50;
+    
+    const isMobile = window.innerWidth < 768;
+    const isSlowDevice = isSlowConnection() || prefersReducedMotion();
+    
+    if (isSlowDevice) return 20;
+    if (isMobile) return 30;
+    return 50; // Reduced from 100 for better performance
+}

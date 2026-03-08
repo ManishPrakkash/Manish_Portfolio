@@ -6,26 +6,29 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import 'lenis/dist/lenis.css';
 import './globals.css';
 import Footer from '@/components/Footer';
-import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
-import ParticleBackground from '@/components/ParticleBackground';
 import Navbar from '@/components/Navbar';
-import CustomCursor from '@/components/CustomCursor';
 import Preloader from '../components/Preloader';
 import StickyEmail from './_components/StickyEmail';
+import ClientLayout from '@/components/ClientLayout';
 import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
+import { RESOURCE_HINTS } from '@/lib/performance';
 
+
+// Optimized font loading with display: swap for better performance
 const antonFont = Anton({
     weight: '400',
     style: 'normal',
     subsets: ['latin'],
     variable: '--font-anton',
+    display: 'swap', // Prevents FOIT (Flash of Invisible Text)
 });
 
 const robotoFlex = Roboto_Flex({
-    weight: ['100', '400', '500', '600', '700', '800'],
+    weight: ['400', '500', '700'], // Reduced weights for smaller bundle
     style: 'normal',
     subsets: ['latin'],
     variable: '--font-roboto-flex',
+    display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -92,10 +95,20 @@ export default function RootLayout({
 
     return (
         <html lang="en">
+            <head>
+                {/* Resource hints for faster external resource loading */}
+                {RESOURCE_HINTS.preconnect.map((url) => (
+                    <link key={url} rel="preconnect" href={url} crossOrigin="anonymous" />
+                ))}
+                {RESOURCE_HINTS.dnsPrefetch.map((url) => (
+                    <link key={url} rel="dns-prefetch" href={url} />
+                ))}
+            </head>
             <body
                 className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
                 suppressHydrationWarning
             >
+                {/* Minified structured data for reduced HTML size */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -112,10 +125,8 @@ export default function RootLayout({
                     <main>{children}</main>
                     <Footer />
 
-                    <CustomCursor />
+                    <ClientLayout />
                     <Preloader />
-                    <ScrollProgressIndicator />
-                    <ParticleBackground />
                     <StickyEmail />
                 </ReactLenis>
             </body>

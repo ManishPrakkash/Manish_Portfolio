@@ -1,32 +1,28 @@
 'use client';
 
-import { ReactNode, useEffect } from 'react';
-import Lenis from 'lenis';
+import dynamic from 'next/dynamic';
 
-export default function ClientLayout({ children }: { children: ReactNode }) {
-    useEffect(() => {
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            orientation: 'vertical',
-            gestureOrientation: 'vertical',
-            smoothWheel: true,
-            wheelMultiplier: 1,
-            touchMultiplier: 2,
-            infinite: false,
-        });
+const ParticleBackground = dynamic(() => import('@/components/ParticleBackground'), {
+    ssr: false,
+    loading: () => null,
+});
 
-        function raf(time: number) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
+const CustomCursor = dynamic(() => import('@/components/CustomCursor'), {
+    ssr: false,
+    loading: () => null,
+});
 
-        requestAnimationFrame(raf);
+const ScrollProgressIndicator = dynamic(() => import('@/components/ScrollProgressIndicator'), {
+    ssr: false,
+    loading: () => null,
+});
 
-        return () => {
-            lenis.destroy();
-        };
-    }, []);
-
-    return <div>{children}</div>;
+export default function ClientLayout() {
+    return (
+        <>
+            <CustomCursor />
+            <ScrollProgressIndicator />
+            <ParticleBackground />
+        </>
+    );
 }
