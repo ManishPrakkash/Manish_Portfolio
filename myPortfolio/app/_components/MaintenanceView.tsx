@@ -58,6 +58,10 @@ export default function MaintenancePage() {
             <div className="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-5xl mx-auto">
                 {/* Status Dot Removed */}
 
+                <p className="reveal-item opacity-0 text-white font-medium tracking-[0.3em] uppercase mb-6 text-xs md:text-sm">
+                    Manish Prakkash
+                </p>
+
                 {/* Huge Minimal Title */}
                 <h1 
                     className="reveal-item opacity-0 leading-[0.9] tracking-wider uppercase mb-10 w-full text-foreground/90 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-5xl sm:text-7xl md:text-8xl lg:text-9xl"
