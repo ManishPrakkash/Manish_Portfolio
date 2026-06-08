@@ -8,6 +8,8 @@ import { useRef } from 'react';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
+import { ExternalLink, Award } from 'lucide-react';
+
 const Experiences = () => {
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -58,16 +60,42 @@ const Experiences = () => {
 
                 <div className="grid gap-14">
                     {MY_EXPERIENCE.map((item) => (
-                        <div key={item.title} className="experience-item">
-                            <p className="text-xl text-muted-foreground">
-                                {item.company}
-                            </p>
+                        <div key={item.title} className="experience-item relative">
+                            <div className="text-xl text-muted-foreground flex items-center gap-2">
+                                {item.url ? (
+                                    <a 
+                                        href={item.url} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="hover:text-primary transition-colors flex items-center gap-2"
+                                    >
+                                        {item.company}
+                                        <ExternalLink className="w-4 h-4 opacity-50" />
+                                    </a>
+                                ) : (
+                                    item.company
+                                )}
+                            </div>
+                            
                             <p className="text-5xl font-anton leading-none mt-3.5 mb-2.5">
                                 {item.title}
                             </p>
-                            <p className="text-lg text-muted-foreground">
-                                {item.duration}
-                            </p>
+                            
+                            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-lg text-muted-foreground">
+                                <span>{item.duration}</span>
+                                
+                                {item.certificateUrl && (
+                                    <a 
+                                        href={item.certificateUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-1.5 text-sm uppercase tracking-widest hover:text-primary transition-colors"
+                                    >
+                                        <Award className="w-4 h-4" />
+                                        <span>View Certificate</span>
+                                    </a>
+                                )}
+                            </div>
                         </div>
                     ))}
                 </div>

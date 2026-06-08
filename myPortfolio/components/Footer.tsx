@@ -1,30 +1,7 @@
 import { GENERAL_INFO } from '@/lib/data';
-import { GitFork, Star } from 'lucide-react';
+import { GitFork, Star, Infinity } from 'lucide-react';
 
-interface RepoStats {
-    stargazers_count: number;
-    forks_count: number;
-}
-
-const Footer = async () => {
-    let stargazers_count = 0;
-    let forks_count = 0;
-    try {
-        const repoStats = await fetch(
-            'https://api.github.com/repos/ManishPrakkash',
-            {
-                next: {
-                    revalidate: 60 * 60, // 1 hour
-                },
-            },
-        );
-        if (repoStats.ok) {
-            const data = (await repoStats.json()) as RepoStats;
-            stargazers_count = data.stargazers_count || 0;
-            forks_count = data.forks_count || 0;
-        }
-    } catch {} // fallback to 0 if fetch fails
-
+const Footer = () => {
     return (
         <footer className="text-center pb-5" id="contact">
             <div className="container">
@@ -46,10 +23,10 @@ const Footer = async () => {
                         Design & built by Manish Prakkash
                         <div className="flex items-center justify-center gap-5 pt-1">
                             <span className="flex items-center gap-2">
-                                <Star size={18} /> {stargazers_count}
+                                <Star size={18} /> <Infinity size={18} className="stroke-[2.5px]" />
                             </span>
                             <span className="flex items-center gap-2">
-                                <GitFork size={18} /> {forks_count}
+                                <GitFork size={18} /> 67
                             </span>
                         </div>
                     </a>

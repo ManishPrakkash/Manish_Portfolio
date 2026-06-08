@@ -95,125 +95,63 @@ export const MY_STACK = {
 
 export const PROJECTS: IProject[] = [
     {
-        title: 'Fitrack Application',
-        slug: 'fitrack-application',
-        liveUrl: 'https://fitrack-lime.vercel.app/',
-        year: 2025,
+        title: 'Engal Sandhai',
+        slug: 'engal-sandhai',
+        liveUrl: 'https://engal-sandhai.web.app/',
+        sourceCode: 'https://github.com/ManishPrakkash/Engal-Sandhai',
+        year: 2026,
         description: `
-  <strong>Problem:</strong> Fitness enthusiasts needed a centralized platform to track health metrics, manage profiles, and securely store personal fitness data with seamless authentication.<br/><br/>
+  <strong>Problem:</strong> The college campus vegetable store lacked an efficient way to manage daily stock and process orders for over 300 faculty members, relying on manual billing and causing stock overselling issues.<br/><br/>
 
-  <strong>Solution:</strong> Built Fitrack, a full-stack fitness tracking application combining React frontend with Django REST API backend, featuring JWT-based authentication and real-time MongoDB Atlas integration for personalized health monitoring.<br/><br/>
+  <strong>Solution:</strong> Built Engal Sandhai, a web-based, intranet-only billing and realtime stock management system connecting 300+ daily active faculty buyers with admin staff. The platform streamlines orders, handles static QR-based payments, and perfectly syncs inventory.<br/><br/>
 
   <strong>Key Features:</strong><br/>
   <ul>
-    <li>🔐 <strong>Authentication:</strong> Secure login/signup using JWT-based token system with refresh tokens for persistent sessions</li>
-    <li>👤 <strong>Profile Management:</strong> Users can manage and update their fitness profile with real-time data synchronization</li>
-    <li>📊 <strong>Data Storage:</strong> Real-time data handling with MongoDB Atlas integration using Djongo/MongoEngine</li>
-    <li>🌐 <strong>REST API:</strong> Django-powered RESTful endpoints for seamless frontend-backend interaction</li>
-    <li>🔒 <strong>Secure Credentials:</strong> Passwords are hashed and stored securely following industry best practices</li>
-    <li>🔗 <strong>CORS Setup:</strong> Cross-origin requests enabled for React-Django communication via Axios</li>
+    <li>⚡ <strong>Realtime Updates:</strong> Instant stock sync and live new-order notifications across all connected clients via WebSockets.</li>
+    <li>🧮 <strong>Atomic Transactions:</strong> Multi-item order processing with atomic stock decrements to completely prevent race conditions and overselling.</li>
+    <li>🔐 <strong>Role-Based Auth:</strong> Employee ID-based authentication with forced password resets and strict per-order session rules (auto-logout after payment upload).</li>
+    <li>🛍️ <strong>Purchasing & Billing:</strong> Comprehensive buying panel with cart management, automated bill generation, and payment screenshot uploads.</li>
+    <li>🛠️ <strong>Admin Dashboard:</strong> Full control over daily stock updates, price management, manual payment verification, and order reverting.</li>
   </ul><br/>
 
   <strong>Technical Implementation:</strong>
   <ul>
-    <li>Connected Django with MongoDB Atlas using Djongo/MongoEngine for NoSQL data modeling</li>
-    <li>Implemented JWT authentication with refresh tokens for persistent, secure sessions</li>
-    <li>Built dynamic, responsive frontend components using React and Tailwind CSS</li>
-    <li>Configured and consumed APIs via Axios with state-managed responses</li>
-    <li>Modular project architecture with clear separation between frontend and backend layers</li>
+    <li>Architected a highly responsive real-time backend using Firebase Authentication and Firestore database.</li>
+    <li>Implemented WebSockets for live stock synchronization and instant admin notifications.</li>
+    <li>Ensured data integrity during high-concurrency periods using atomic Firestore transactions.</li>
+    <li>Deployed as a lightweight, intranet-only self-hosted stack eliminating the need for paid cloud infrastructure.</li>
   </ul><br/>
 
-  <strong>Impact:</strong> Delivered a production-ready fitness tracking platform with enterprise-grade security, scalable architecture, and seamless user experience across authentication, data management, and profile customization.
+  <strong>Impact:</strong> Currently in active production use by 300+ college staff members daily, completely digitizing the campus vegetable store's billing and inventory workflow.
 `,
         role: `
-  <strong>Full-Stack Developer</strong><br/>
-  Led end-to-end development and integration:<br/>
+  <strong>Backend Developer & Deployment Engineer</strong><br/>
+  Led the backend architecture and production deployment:<br/>
   <ul>
-    <li>✅ <strong>Backend:</strong> Developed Django REST API and connected to MongoDB Atlas with secure data models</li>
-    <li>🔐 <strong>Auth System:</strong> Implemented JWT-based secure login and signup system with token refresh</li>
-    <li>📁 <strong>Models:</strong> Designed MongoDB schemas for storing user and fitness data with validation</li>
-    <li>🎨 <strong>Frontend:</strong> Built a clean, responsive UI using React and Tailwind CSS with modern design patterns</li>
-    <li>🔄 <strong>Data Handling:</strong> Used Axios for API calls and managed client-side state efficiently</li>
-    <li>🛠️ <strong>Deployment Ready:</strong> Structured codebase for deployment readiness with modular architecture</li>
+    <li>🗄️ <strong>Database Architecture:</strong> Designed the Firestore schema for users, orders, and real-time stock tracking.</li>
+    <li>⚡ <strong>Atomic Transactions:</strong> Engineered the critical order-processing logic using Firestore atomic transactions to prevent overselling during peak purchase times.</li>
+    <li>📡 <strong>Realtime Infrastructure:</strong> Integrated WebSockets and Firestore listeners for instant state synchronization across 300+ concurrent clients.</li>
+    <li>🔐 <strong>Security & Auth:</strong> Configured Firebase Auth and security rules for strict role-based access control between Admin faculty and standard users.</li>
+    <li>🚀 <strong>Deployment:</strong> Configured and deployed the entire system on a local intranet-only environment for zero-cost, high-speed operation.</li>
   </ul>
 `,
         techStack: [
             'React',
-            'Django',
-            'MongoDB',
-            'JWT',
-            'Tailwind CSS',
-            'Axios',
-        ],
-        thumbnail: '/projects/thumbnail/fitrack.png',
-        longThumbnail: '/projects/long/fitrack.png',
-        images: [
-            '/projects/images/fitrack1.png',
-            '/projects/images/fitrack2.png',
-            '/projects/images/fitrack3.png',
-        ],
-    },
-    {
-        title: 'Nutriapp',
-        slug: 'nutri-apk',
-        sourceCode: 'https://github.com/ManishPrakkash/nutritionApp',
-        year: 2025,
-        description: `
-  <strong>Problem:</strong> Fitness enthusiasts lacked a unified mobile platform to get personalized meal plans, workout routines, and ML-powered health risk predictions all calibrated to their unique body metrics and dietary goals.<br/><br/>
-
-  <strong>Solution:</strong> Built Nutriapp, an AI-powered Health & Nutrition mobile application using Flutter and Firebase, with a Python ML backend on Render running Random Forest, Gradient Boosting, and Ridge Regression models for personalized health insights.<br/><br/>
-
-  <strong>Key Features:</strong><br/>
-  <ul>
-    <li>🍽️ <strong>Dynamic Meal Engine:</strong> 638+ meals with swap support, dietary filters (Vegan, Vegetarian, Non-Veg), and real-time macro tracking across daily, weekly, and monthly views</li>
-    <li>🏋️ <strong>Smart Workout Plans:</strong> 175+ exercises across Beginner / Intermediate / Advanced levels with Warm-up → Main → Cool-down structure and Firestore-persisted completion tracking</li>
-    <li>🤖 <strong>ML Health Predictions:</strong> Risk scores (0–100) for Obesity, Diabetes, and Hypertension via Random Forest, Gradient Boosting, and Ridge Regression models</li>
-    <li>📊 <strong>Real-time Analytics:</strong> Performance gauges for Nutrition, Activity, Sleep & Hydration that update instantly on meal toggle, swap, or workout completion</li>
-    <li>⌚ <strong>Device Integration:</strong> Syncs with Android Health Connect for steps, heart rate, sleep duration, and calories burned via Pedometer & Health SDK</li>
-    <li>🏆 <strong>Gamification:</strong> Login streak counter with badge tiers — Bronze (7d) → Silver (15d) → Gold (30d) → Platinum (90d) → Legend (180d)</li>
-  </ul><br/>
-
-  <strong>Technical Implementation:</strong>
-  <ul>
-    <li>Built cross-platform mobile app with Flutter 3.9.2 and Dart, targeting Android & iOS</li>
-    <li>Managed reactive state with Riverpod 2.5.1 using AsyncNotifier, FutureProvider, StreamProvider, and StateNotifier patterns</li>
-    <li>Integrated Firebase Auth (email/password + session restore), Cloud Firestore (real-time CRUD), Firebase Storage, and FCM push notifications</li>
-    <li>Consumed Python ML API hosted on Render via Dio HTTP client with 30s timeout and local JSON fallback when offline</li>
-    <li>Generated PDF health reports with macro breakdowns and exported downloadable weekly/monthly analytics</li>
-    <li>Managed permissions for Health Connect, pedometer, camera, and storage via permission_handler</li>
-  </ul><br/>
-
-  <strong>Impact:</strong> Delivered a production-ready AI health platform with 638+ meals, 175+ exercises, three live ML models, real-time device sync, and a full gamification system — covering end-to-end personalized health management for Android and iOS.
-`,
-        role: `
-  <strong>Full-Stack Mobile Developer</strong><br/>
-  Led end-to-end development across mobile, backend, and ML integration:<br/>
-  <ul>
-    <li>📱 <strong>Flutter App:</strong> Designed and built the full cross-platform UI with 5-tab navigation, Lottie animations, shimmer skeletons, and fl_chart-powered analytics dashboards</li>
-    <li>🔥 <strong>Firebase Integration:</strong> Wired up Firebase Auth, Firestore (profiles, meal logs, workout logs, streaks, weight history), Storage, and FCM for push notifications</li>
-    <li>🤖 <strong>ML Pipeline:</strong> Integrated Render-hosted ML API (Random Forest, Gradient Boosting, Ridge Regression) with offline fallback to local JSON assets</li>
-    <li>🧠 <strong>State Management:</strong> Architected Riverpod providers for complex async state — including real-time score recalculation on meal toggle, swap, and workout completion</li>
-    <li>⌚ <strong>Health Device Sync:</strong> Implemented Android Health Connect and iOS HealthKit integration for live step count, heart rate, sleep, and calorie data</li>
-    <li>🏆 <strong>Gamification System:</strong> Built login streak tracking, badge tier progression, and habit tracker with Firestore persistence and daily goal management</li>
-  </ul>
-`,
-        techStack: [
-            'Flutter',
-            'Dart',
             'Firebase',
-            'Riverpod',
-            'Python',
-            'Machine Learning',
             'Firestore',
+            'WebSockets',
+            'Tailwind CSS',
+            'TypeScript',
         ],
-        thumbnail: '/projects/thumbnail/project2.png',
-        longThumbnail: '/projects/long/project2.png',
+        thumbnail: '/projects/thumbnail/engal-sandhai.png',
+        longThumbnail: '/projects/long/engal-sandhai.png',
         images: [
-            '/projects/images/project2-1.png',
-            '/projects/images/project2-2.png',
-            '/projects/images/project2-3.png',
+            '/projects/images/engal-sandhai1.png',
+            '/projects/images/engal-sandhai2.png',
+            '/projects/images/engal-sandhai3.png',
         ],
     },
+
     {
         title: 'Cloud Meter',
         slug: 'cloud-meter',
@@ -335,60 +273,7 @@ export const PROJECTS: IProject[] = [
             '/projects/images/project4-3.png',
         ],
     },
-    {
-        title: 'Quizaroo',
-        slug: 'quizaroo',
-        liveUrl: 'https://manishprakkash.github.io/Quizaroo/',
-        sourceCode: 'https://github.com/ManishPrakkash/Quizaroo',
-        year: 2025,
-        description: `
-  <strong>Problem:</strong> Developers learning JavaScript needed an engaging, self-paced quiz platform that covers the full JS spectrum — from basics to ES6+ advanced patterns — with timed pressure and instant feedback to reinforce learning.<br/><br/>
 
-  <strong>Solution:</strong> Built Quizaroo, a modern interactive JavaScript quiz application using vanilla JavaScript, Tailwind CSS, and a clean modular architecture — featuring 20 curated questions across 4 difficulty levels, a 10-second countdown timer per question, instant answer feedback, and a full results breakdown with answer review.<br/><br/>
-
-  <strong>Key Features:</strong><br/>
-  <ul>
-    <li>🎯 <strong>20 Levelled Questions:</strong> 4 difficulty tiers — Level 1: Basics, Level 2: Core JS, Level 3: ES6 Features, Level 4: Advanced JS — 5 questions each</li>
-    <li>⏱️ <strong>10-Second Timer:</strong> Per-question visual countdown with automatic progression on timeout</li>
-    <li>✅ <strong>Instant Feedback:</strong> Correct/incorrect highlights immediately after each answer selection</li>
-    <li>📊 <strong>Detailed Results:</strong> Full score breakdown with per-question answer review at the end</li>
-    <li>♿ <strong>Accessibility:</strong> Semantic HTML, ARIA labels, keyboard navigation support, and color contrast compliance</li>
-    <li>🚀 <strong>CI/CD Pipeline:</strong> GitHub Actions workflow for automated linting and deployment to GitHub Pages on push to main</li>
-  </ul><br/>
-
-  <strong>Technical Implementation:</strong>
-  <ul>
-    <li>Built with zero external runtime dependencies — pure vanilla JavaScript using ES6+ features (classes, arrow functions, template literals, modules)</li>
-    <li>Followed modular architecture: <code>app.js</code> (controller), <code>quiz.js</code> (state & scoring), <code>timer.js</code> (reusable countdown), <code>questions.js</code> (data), <code>ui.js</code> (DOM rendering)</li>
-    <li>Applied Module, Observer, Singleton, and State Management patterns for clean separation of concerns</li>
-    <li>Styled with Tailwind CSS and custom CSS with dark mode via system preference detection</li>
-    <li>Used event delegation and efficient DOM manipulation for minimal memory footprint and optimized re-renders</li>
-    <li>Automated deployment via GitHub Actions to GitHub Pages with lint checks on every push</li>
-  </ul><br/>
-
-  <strong>Impact:</strong> Delivered a fully accessible, zero-dependency JavaScript quiz app with CI/CD automation, modular architecture, and 4-tier difficulty progression — live on GitHub Pages and ready to extend with new question sets.
-`,
-        role: `
-  <strong>Frontend Developer</strong><br/>
-  Designed and built the entire application from scratch:<br/>
-  <ul>
-    <li>🏗️ <strong>Architecture:</strong> Designed the 5-module vanilla JS architecture with clear separation between state, timer, data, rendering, and app control</li>
-    <li>⏱️ <strong>Timer Module:</strong> Built a reusable Observer-pattern timer with configurable duration, tick callbacks, and timeout handling</li>
-    <li>🎯 <strong>Quiz Engine:</strong> Implemented state management for question progression, scoring, answer tracking, and results compilation</li>
-    <li>🎨 <strong>UI Layer:</strong> Wrote all DOM rendering logic in <code>ui.js</code> using Tailwind CSS classes with smooth transitions, progress indicators, and responsive layout</li>
-    <li>♿ <strong>Accessibility:</strong> Added semantic HTML, ARIA labels, focus indicators, keyboard navigation, and WCAG color contrast compliance</li>
-    <li>🚀 <strong>CI/CD:</strong> Configured GitHub Actions workflow for automated lint checks and GitHub Pages deployment on every push to main</li>
-  </ul>
-`,
-        techStack: ['JavaScript', 'GitHub Pages', 'GitHub Actions', 'HTML5'],
-        thumbnail: '/projects/thumbnail/project3.png',
-        longThumbnail: '/projects/long/project3.png',
-        images: [
-            '/projects/images/project3-1.png',
-            '/projects/images/project3-2.png',
-            '/projects/images/project3-3.png',
-        ],
-    },
     {
         title: 'Secure Paste',
         slug: 'secure-paste',
@@ -511,9 +396,76 @@ export const PROJECTS: IProject[] = [
             '/projects/images/project4-3.png',
         ],
     },
+    {
+        title: 'Quizaroo',
+        slug: 'quizaroo',
+        liveUrl: 'https://manishprakkash.github.io/Quizaroo/',
+        sourceCode: 'https://github.com/ManishPrakkash/Quizaroo',
+        year: 2025,
+        description: `
+  <strong>Problem:</strong> Developers learning JavaScript needed an engaging, self-paced quiz platform that covers the full JS spectrum — from basics to ES6+ advanced patterns — with timed pressure and instant feedback to reinforce learning.<br/><br/>
+
+  <strong>Solution:</strong> Built Quizaroo, a modern interactive JavaScript quiz application using vanilla JavaScript, Tailwind CSS, and a clean modular architecture — featuring 20 curated questions across 4 difficulty levels, a 10-second countdown timer per question, instant answer feedback, and a full results breakdown with answer review.<br/><br/>
+
+  <strong>Key Features:</strong><br/>
+  <ul>
+    <li>🎯 <strong>20 Levelled Questions:</strong> 4 difficulty tiers — Level 1: Basics, Level 2: Core JS, Level 3: ES6 Features, Level 4: Advanced JS — 5 questions each</li>
+    <li>⏱️ <strong>10-Second Timer:</strong> Per-question visual countdown with automatic progression on timeout</li>
+    <li>✅ <strong>Instant Feedback:</strong> Correct/incorrect highlights immediately after each answer selection</li>
+    <li>📊 <strong>Detailed Results:</strong> Full score breakdown with per-question answer review at the end</li>
+    <li>♿ <strong>Accessibility:</strong> Semantic HTML, ARIA labels, keyboard navigation support, and color contrast compliance</li>
+    <li>🚀 <strong>CI/CD Pipeline:</strong> GitHub Actions workflow for automated linting and deployment to GitHub Pages on push to main</li>
+  </ul><br/>
+
+  <strong>Technical Implementation:</strong>
+  <ul>
+    <li>Built with zero external runtime dependencies — pure vanilla JavaScript using ES6+ features (classes, arrow functions, template literals, modules)</li>
+    <li>Followed modular architecture: <code>app.js</code> (controller), <code>quiz.js</code> (state & scoring), <code>timer.js</code> (reusable countdown), <code>questions.js</code> (data), <code>ui.js</code> (DOM rendering)</li>
+    <li>Applied Module, Observer, Singleton, and State Management patterns for clean separation of concerns</li>
+    <li>Styled with Tailwind CSS and custom CSS with dark mode via system preference detection</li>
+    <li>Used event delegation and efficient DOM manipulation for minimal memory footprint and optimized re-renders</li>
+    <li>Automated deployment via GitHub Actions to GitHub Pages with lint checks on every push</li>
+  </ul><br/>
+
+  <strong>Impact:</strong> Delivered a fully accessible, zero-dependency JavaScript quiz app with CI/CD automation, modular architecture, and 4-tier difficulty progression — live on GitHub Pages and ready to extend with new question sets.
+`,
+        role: `
+  <strong>Frontend Developer</strong><br/>
+  Designed and built the entire application from scratch:<br/>
+  <ul>
+    <li>🏗️ <strong>Architecture:</strong> Designed the 5-module vanilla JS architecture with clear separation between state, timer, data, rendering, and app control</li>
+    <li>⏱️ <strong>Timer Module:</strong> Built a reusable Observer-pattern timer with configurable duration, tick callbacks, and timeout handling</li>
+    <li>🎯 <strong>Quiz Engine:</strong> Implemented state management for question progression, scoring, answer tracking, and results compilation</li>
+    <li>🎨 <strong>UI Layer:</strong> Wrote all DOM rendering logic in <code>ui.js</code> using Tailwind CSS classes with smooth transitions, progress indicators, and responsive layout</li>
+    <li>♿ <strong>Accessibility:</strong> Added semantic HTML, ARIA labels, focus indicators, keyboard navigation, and WCAG color contrast compliance</li>
+    <li>🚀 <strong>CI/CD:</strong> Configured GitHub Actions workflow for automated lint checks and GitHub Pages deployment on every push to main</li>
+  </ul>
+`,
+        techStack: ['JavaScript', 'GitHub Pages', 'GitHub Actions', 'HTML5'],
+        thumbnail: '/projects/thumbnail/project3.png',
+        longThumbnail: '/projects/long/project3.png',
+        images: [
+            '/projects/images/project3-1.png',
+            '/projects/images/project3-2.png',
+            '/projects/images/project3-3.png',
+        ],
+    },
 ];
 
 export const MY_EXPERIENCE = [
+    {
+        title: 'Full Stack Developer',
+        company: 'EFIQ Solutions',
+        duration: 'May 2026 - Present',
+        url: 'https://efiqsolutions.com/',
+    },
+    {
+        title: 'App Developer',
+        company: 'Technovanam',
+        duration: 'Mar 2026 - Apr 2026',
+        url: 'https://technovanam.in/',
+        certificateUrl: '/certificates/technovanam.jpg',
+    },
     {
         title: 'Web Developer',
         company: 'Cognifyz Technologies',

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Anton, Roboto_Flex } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
+import Script from 'next/script';
 
 import './globals.css';
 import Footer from '@/components/Footer';
@@ -19,7 +20,7 @@ import MaintenanceCursor from './_components/MaintenanceCursor';
 // Set to `true` to show the "Under Development" page to all visitors.
 // Set to `false` to restore the normal portfolio.
 // You can also use an environment variable: process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true'
-const MAINTENANCE_MODE = true;
+const MAINTENANCE_MODE = false;
 // ───────────────────────────────────────────────────────────────────────────
 // Force reload trigger
 // Optimized font loading with display: swap for better performance
@@ -158,6 +159,15 @@ export default function RootLayout({
             </body>
             <GoogleAnalytics gaId="G-MBGQG95ZVK" />
             <Analytics />
+            <Script id="microsoft-clarity" strategy="afterInteractive">
+                {`
+                    (function(c,l,a,r,i,t,y){
+                        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                    })(window, document, "clarity", "script", "x3raq6f9m3");
+                `}
+            </Script>
         </html>
     );
 }
