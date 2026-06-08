@@ -118,7 +118,7 @@ const ProjectDetails = ({ project }: Props) => {
                                         href={project.sourceCode}
                                         target="_blank"
                                         rel="noreferrer noopener"
-                                        className="hover:text-primary"
+                                        className="text-foreground hover:text-primary transition-colors"
                                     >
                                         <Github size={30} />
                                     </a>

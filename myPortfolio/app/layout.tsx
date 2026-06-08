@@ -10,10 +10,18 @@ import Preloader from '../components/Preloader';
 import StickyEmail from './_components/StickyEmail';
 import ClientLayout from '@/components/ClientLayout';
 import SmoothScroll from '@/components/SmoothScroll';
+import MaintenancePage from './_components/MaintenanceView';
 import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
 import { RESOURCE_HINTS } from '@/lib/performance';
+import MaintenanceCursor from './_components/MaintenanceCursor';
 
-
+// ─── MAINTENANCE MODE TOGGLE ───────────────────────────────────────────────
+// Set to `true` to show the "Under Development" page to all visitors.
+// Set to `false` to restore the normal portfolio.
+// You can also use an environment variable: process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true'
+const MAINTENANCE_MODE = false;
+// ───────────────────────────────────────────────────────────────────────────
+// Force reload trigger
 // Optimized font loading with display: swap for better performance
 const antonFont = Anton({
     weight: '400',
@@ -34,8 +42,16 @@ const robotoFlex = Roboto_Flex({
 export const metadata: Metadata = {
     metadataBase: new URL('https://manishprakkashms.vercel.app'),
     title: 'Manish Prakkash - Full Stack MERN Developer Portfolio',
-    description: 'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript. Explore my projects and skills.',
-    keywords: ['Full Stack Developer', 'React', 'Node.js', 'JavaScript', 'TypeScript', 'Portfolio'],
+    description:
+        'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript. Explore my projects and skills.',
+    keywords: [
+        'Full Stack Developer',
+        'React',
+        'Node.js',
+        'JavaScript',
+        'TypeScript',
+        'Portfolio',
+    ],
     authors: [{ name: 'Manish Prakash' }],
     creator: 'Manish Prakash',
     publisher: 'Manish Prakash',
@@ -45,7 +61,8 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'Manish Prakkash - Full Stack MERN Developer Portfolio',
-        description: 'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript.',
+        description:
+            'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript.',
         url: 'https://manishprakkashms.vercel.app',
         type: 'website',
         locale: 'en_US',
@@ -54,7 +71,8 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Manish Prakkash - Full Stack MERN Developer Portfolio',
-        description: 'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript.',
+        description:
+            'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript.',
     },
 };
 
@@ -71,7 +89,7 @@ const structuredData = {
     name: 'Manish Prakkash',
     jobTitle: 'Full Stack MERN Developer',
     url: 'https://manishprakkashms.vercel.app',
-    sameAs: SOCIAL_LINKS.map(link => link.url),
+    sameAs: SOCIAL_LINKS.map((link) => link.url),
     knowsAbout: [
         'React',
         'TypeScript',
@@ -82,7 +100,7 @@ const structuredData = {
         'Firebase',
         'JavaScript',
         'Full Stack Development',
-        'MERN Stack'
+        'MERN Stack',
     ],
     email: GENERAL_INFO.email,
 };
@@ -92,35 +110,50 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-
     return (
         <html lang="en">
             <head>
                 {/* Resource hints for faster external resource loading */}
                 {RESOURCE_HINTS.preconnect.map((url) => (
-                    <link key={url} rel="preconnect" href={url} crossOrigin="anonymous" />
+                    <link
+                        key={url}
+                        rel="preconnect"
+                        href={url}
+                        crossOrigin="anonymous"
+                    />
                 ))}
                 {RESOURCE_HINTS.dnsPrefetch.map((url) => (
                     <link key={url} rel="dns-prefetch" href={url} />
                 ))}
             </head>
             <body
-                className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
+                className={`${antonFont.variable} ${robotoFlex.variable} antialiased ${MAINTENANCE_MODE ? 'maintenance-mode' : ''}`}
                 suppressHydrationWarning
             >
                 {/* Minified structured data for reduced HTML size */}
                 <script
                     type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(structuredData),
+                    }}
                 />
                 <SmoothScroll>
-                    <Navbar />
-                    <main>{children}</main>
-                    <Footer />
+                    {MAINTENANCE_MODE ? (
+                        <>
+                            <MaintenancePage />
+                            <MaintenanceCursor />
+                        </>
+                    ) : (
+                        <>
+                            <Navbar />
+                            <main>{children}</main>
+                            <Footer />
 
-                    <ClientLayout />
-                    <Preloader />
-                    <StickyEmail />
+                            <ClientLayout />
+                            <Preloader />
+                            <StickyEmail />
+                        </>
+                    )}
                 </SmoothScroll>
             </body>
             <GoogleAnalytics gaId="G-MBGQG95ZVK" />

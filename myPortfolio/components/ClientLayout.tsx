@@ -21,6 +21,7 @@ export default function ClientLayout() {
     return (
         <>
             <CustomCursor />
+
             <ScrollProgressIndicator />
             <ParticleBackground />
         </>

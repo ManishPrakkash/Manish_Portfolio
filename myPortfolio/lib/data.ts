@@ -153,6 +153,364 @@ export const PROJECTS: IProject[] = [
             '/projects/images/fitrack3.png',
         ],
     },
+    {
+        title: 'Nutriapp',
+        slug: 'nutri-apk',
+        sourceCode: 'https://github.com/ManishPrakkash/nutritionApp',
+        year: 2025,
+        description: `
+  <strong>Problem:</strong> Fitness enthusiasts lacked a unified mobile platform to get personalized meal plans, workout routines, and ML-powered health risk predictions all calibrated to their unique body metrics and dietary goals.<br/><br/>
+
+  <strong>Solution:</strong> Built Nutriapp, an AI-powered Health & Nutrition mobile application using Flutter and Firebase, with a Python ML backend on Render running Random Forest, Gradient Boosting, and Ridge Regression models for personalized health insights.<br/><br/>
+
+  <strong>Key Features:</strong><br/>
+  <ul>
+    <li>🍽️ <strong>Dynamic Meal Engine:</strong> 638+ meals with swap support, dietary filters (Vegan, Vegetarian, Non-Veg), and real-time macro tracking across daily, weekly, and monthly views</li>
+    <li>🏋️ <strong>Smart Workout Plans:</strong> 175+ exercises across Beginner / Intermediate / Advanced levels with Warm-up → Main → Cool-down structure and Firestore-persisted completion tracking</li>
+    <li>🤖 <strong>ML Health Predictions:</strong> Risk scores (0–100) for Obesity, Diabetes, and Hypertension via Random Forest, Gradient Boosting, and Ridge Regression models</li>
+    <li>📊 <strong>Real-time Analytics:</strong> Performance gauges for Nutrition, Activity, Sleep & Hydration that update instantly on meal toggle, swap, or workout completion</li>
+    <li>⌚ <strong>Device Integration:</strong> Syncs with Android Health Connect for steps, heart rate, sleep duration, and calories burned via Pedometer & Health SDK</li>
+    <li>🏆 <strong>Gamification:</strong> Login streak counter with badge tiers — Bronze (7d) → Silver (15d) → Gold (30d) → Platinum (90d) → Legend (180d)</li>
+  </ul><br/>
+
+  <strong>Technical Implementation:</strong>
+  <ul>
+    <li>Built cross-platform mobile app with Flutter 3.9.2 and Dart, targeting Android & iOS</li>
+    <li>Managed reactive state with Riverpod 2.5.1 using AsyncNotifier, FutureProvider, StreamProvider, and StateNotifier patterns</li>
+    <li>Integrated Firebase Auth (email/password + session restore), Cloud Firestore (real-time CRUD), Firebase Storage, and FCM push notifications</li>
+    <li>Consumed Python ML API hosted on Render via Dio HTTP client with 30s timeout and local JSON fallback when offline</li>
+    <li>Generated PDF health reports with macro breakdowns and exported downloadable weekly/monthly analytics</li>
+    <li>Managed permissions for Health Connect, pedometer, camera, and storage via permission_handler</li>
+  </ul><br/>
+
+  <strong>Impact:</strong> Delivered a production-ready AI health platform with 638+ meals, 175+ exercises, three live ML models, real-time device sync, and a full gamification system — covering end-to-end personalized health management for Android and iOS.
+`,
+        role: `
+  <strong>Full-Stack Mobile Developer</strong><br/>
+  Led end-to-end development across mobile, backend, and ML integration:<br/>
+  <ul>
+    <li>📱 <strong>Flutter App:</strong> Designed and built the full cross-platform UI with 5-tab navigation, Lottie animations, shimmer skeletons, and fl_chart-powered analytics dashboards</li>
+    <li>🔥 <strong>Firebase Integration:</strong> Wired up Firebase Auth, Firestore (profiles, meal logs, workout logs, streaks, weight history), Storage, and FCM for push notifications</li>
+    <li>🤖 <strong>ML Pipeline:</strong> Integrated Render-hosted ML API (Random Forest, Gradient Boosting, Ridge Regression) with offline fallback to local JSON assets</li>
+    <li>🧠 <strong>State Management:</strong> Architected Riverpod providers for complex async state — including real-time score recalculation on meal toggle, swap, and workout completion</li>
+    <li>⌚ <strong>Health Device Sync:</strong> Implemented Android Health Connect and iOS HealthKit integration for live step count, heart rate, sleep, and calorie data</li>
+    <li>🏆 <strong>Gamification System:</strong> Built login streak tracking, badge tier progression, and habit tracker with Firestore persistence and daily goal management</li>
+  </ul>
+`,
+        techStack: [
+            'Flutter',
+            'Dart',
+            'Firebase',
+            'Riverpod',
+            'Python',
+            'Machine Learning',
+            'Firestore',
+        ],
+        thumbnail: '/projects/thumbnail/project2.png',
+        longThumbnail: '/projects/long/project2.png',
+        images: [
+            '/projects/images/project2-1.png',
+            '/projects/images/project2-2.png',
+            '/projects/images/project2-3.png',
+        ],
+    },
+    {
+        title: 'Cloud Meter',
+        slug: 'cloud-meter',
+        liveUrl: 'https://www.npmjs.com/package/cloud-meter',
+        sourceCode: 'https://github.com/ManishPrakkash/Cloud-Meter',
+        year: 2025,
+        description: `
+  <strong>Problem:</strong> Most backend performance issues in production stem from poorly implemented pagination — unbounded queries, deep offsets, missing limits, and unstable sorting — that go undetected until they cause real scaling failures.<br/><br/>
+
+  <strong>Solution:</strong> Built Cloud Meter, a production-grade CLI tool published to npm that statically analyzes backend codebases (no runtime required) using AST parsing to detect pagination anti-patterns, score the codebase from 0–100, and deliver actionable fix recommendations.<br/><br/>
+
+  <strong>Key Features:</strong><br/>
+  <ul>
+    <li>☁️ <strong>Static AST Analysis:</strong> Scans JS/TS files, SQL queries, and ORM patterns without executing any code</li>
+    <li>📊 <strong>Scoring Engine:</strong> 0–100 score with severity-based deductions — Missing LIMIT (−30), Deep OFFSET (−20), No ORDER BY (−15), and more</li>
+    <li>🔍 <strong>12 Detection Rules:</strong> Catches missing LIMIT, deep OFFSET, unstable cursors, unbounded endpoints, dynamic sort injection, infinite scroll risks, and concurrent write exposure</li>
+    <li>🛠️ <strong>Self-Guiding CLI:</strong> Every command outputs what to run next — fully interactive or headless CI mode</li>
+    <li>⚙️ <strong>Config System:</strong> Project-level <code>cloud-meter.config.json</code> with saved defaults for path, output mode, severity threshold, and ignored directories</li>
+    <li>🚦 <strong>CI/CD Integration:</strong> <code>--mode ci</code> exits with code 1 when findings exceed configured severity threshold — drop into any pipeline</li>
+  </ul><br/>
+
+  <strong>Technical Implementation:</strong>
+  <ul>
+    <li>Built CLI with Node.js and TypeScript, published as <code>cloud-meter</code> on npm with global install support</li>
+    <li>Implemented AST-based pattern matching for Prisma, Mongoose, Sequelize, TypeORM, raw SQL, and GraphQL Relay-style resolvers</li>
+    <li>Designed a modular rulebook with configurable severity weights and heuristic penalties for dynamic sorting and concurrency risk</li>
+    <li>Added framework detection for Express, NestJS, Fastify, and Koa route/controller/service layers</li>
+    <li>Supported monorepo structures with auto-detection of <code>apps/api</code>, <code>services/api</code>, and <code>backend</code> directories</li>
+    <li>Persisted analysis cache for <code>recommend</code> command to serve fix recipes from the last scan without re-running</li>
+  </ul><br/>
+
+  <strong>Impact:</strong> Delivered a zero-runtime, production-grade CLI that catches pagination scaling risks before they hit production — installable in one command, CI-ready out of the box, and covering the full ORM, SQL, and GraphQL ecosystem.
+`,
+        role: `
+  <strong>CLI Tool Author & Publisher</strong><br/>
+  Designed, built, and published the full tool end-to-end:<br/>
+  <ul>
+    <li>🏗️ <strong>Architecture:</strong> Designed the modular command structure (<code>analyze</code>, <code>init</code>, <code>recommend</code>, <code>doctor</code>, <code>config</code>) with a shared config loader and analysis cache</li>
+    <li>🔬 <strong>Detection Engine:</strong> Implemented 12 AST-based detection rules targeting pagination anti-patterns across ORMs, raw SQL, and GraphQL resolvers</li>
+    <li>📈 <strong>Scoring Model:</strong> Built the severity-weighted deduction system with grade thresholds (Production Grade → Critical)</li>
+    <li>🚦 <strong>CI/CD Mode:</strong> Wired up non-interactive <code>--mode ci</code> with exit codes and JSON output for pipeline integration</li>
+    <li>📦 <strong>npm Publishing:</strong> Packaged and published to npm as <code>cloud-meter</code> with global CLI entrypoint and TypeScript type checking</li>
+    <li>🧪 <strong>Testing & Tooling:</strong> Added test suite, build pipeline, and local link workflow for iterative development</li>
+  </ul>
+`,
+        techStack: [
+            'AST Parsing',
+            'npm CLI',
+            'GraphQL',
+            'TypeScript',
+            'Prisma',
+        ],
+        thumbnail: '/projects/thumbnail/project3.png',
+        longThumbnail: '/projects/long/project3.png',
+        images: [
+            '/projects/images/project3-1.png',
+            '/projects/images/project3-2.png',
+            '/projects/images/project3-3.png',
+        ],
+    },
+    {
+        title: 'Artifex',
+        slug: 'artifex',
+        liveUrl: 'https://artifex-22767.firebaseapp.com',
+        sourceCode: 'https://github.com/ManishPrakkash/Artifex',
+        year: 2025,
+        description: `
+  <strong>Problem:</strong> Building multi-agent AI systems requires deep technical knowledge of agent frameworks, architecture design, and Python code generation — a complex, time-consuming process inaccessible to most developers without specialist expertise.<br/><br/>
+
+  <strong>Solution:</strong> Built Artifex, a next-generation AI agent builder that converts natural language requirements into complete, production-ready multi-agent Python systems using Google ADK, featuring a FastAPI/WebSocket backend, a visual Next.js frontend with real-time graph visualization, and a meta-agent orchestrator that runs sub-agents for requirements analysis, architecture planning, tool generation, and code output.<br/><br/>
+
+  <strong>Key Features:</strong><br/>
+  <ul>
+    <li>🧠 <strong>Meta-Agent Orchestration:</strong> Google ADK-powered orchestrator chains specialized sub-agents (Requirements Analyzer → Architecture Planner → Agent Builder → Tool Builder → Code Generator → Validator) to convert free-text into executable Python projects</li>
+    <li>📊 <strong>Visual Agent Graph:</strong> Real-time ReactFlow architecture visualization streamed over WebSocket — shows agent nodes, tool connections, and sub-agent hierarchies as they are built</li>
+    <li>🔧 <strong>Custom Tool Generation:</strong> Generates Python tool functions with error handling for Google Search, URL context, API integrations, data processing, and file I/O</li>
+    <li>💻 <strong>Integrated Code Editor:</strong> Syntax-highlighted TipTap editor for previewing and editing the generated <code>agent.py</code>, <code>tools.py</code>, <code>requirements.txt</code>, and <code>README.md</code> inline</li>
+    <li>🔄 <strong>4 Agent Type Support:</strong> Generates LLM Agent, Sequential Agent, Parallel Agent, and Loop Agent configurations with correct ADK wiring</li>
+    <li>🚀 <strong>Session Management:</strong> Persistent config state across the full creation conversation — requirements, architecture, tool specs, and generated files survive multi-turn sessions</li>
+  </ul><br/>
+
+  <strong>Technical Implementation:</strong><br/>
+  <ul>
+    <li>Built meta-agent system with Google ADK, coordinating 6 specialized sub-agents via a root orchestrator defined in Pydantic config schemas</li>
+    <li>Designed FastAPI REST + WebSocket API with live progress streaming to the frontend during code generation</li>
+    <li>Built Next.js frontend with ReactFlow for interactive agent graph visualization, TipTap for code editing, and Tailwind CSS + shadcn/ui for the interface</li>
+    <li>Implemented config-to-code pipeline converting validated Pydantic agent configs into complete Python ADK project files</li>
+    <li>Supported 8+ builtin tools (google_search, url_context, load_memory, transfer_to_agent, exit_loop, etc.) and arbitrary custom Python tool generation</li>
+    <li>Auto-detected monorepo structures and generated project-ready output with <code>requirements.txt</code> and <code>README.md</code> for immediate use</li>
+  </ul><br/>
+
+  <strong>Impact:</strong> Delivered a full-stack AI agent builder that collapses multi-agent system development from hours of manual coding into a single natural language conversation — producing complete, runnable Python ADK projects with visual architecture previews and integrated editing.
+`,
+        role: `
+  <strong>Full-Stack AI Systems Developer</strong><br/>
+  Designed and built the entire platform end-to-end:<br/>
+  <ul>
+    <li>🤖 <strong>Meta-Agent System:</strong> Architected the Google ADK orchestrator and 6 specialized sub-agents with Pydantic-validated config schemas and prompt templates</li>
+    <li>🔧 <strong>Code Generation Pipeline:</strong> Built the config-to-code engine that converts structured agent configs into complete, production-ready Python ADK projects</li>
+    <li>🌐 <strong>Backend API:</strong> Developed FastAPI REST and WebSocket endpoints for real-time progress streaming and session management throughout the agent creation flow</li>
+    <li>🎨 <strong>Frontend Interface:</strong> Built the Next.js app with ReactFlow agent graph visualization, TipTap code editor, and full dark/light mode support with shadcn/ui components</li>
+    <li>🛠️ <strong>Tool Builder:</strong> Implemented the custom Python tool generator supporting API integrations, data processing tools, file I/O, and all 8+ Google ADK builtin tools</li>
+    <li>📦 <strong>Project Output:</strong> Wired up the full file generation pipeline producing <code>agent.py</code>, <code>tools.py</code>, <code>requirements.txt</code>, and <code>README.md</code> as a downloadable Python project</li>
+  </ul>
+`,
+        techStack: [
+            'Google ADK',
+            'WebSockets',
+            'FastAPI',
+            'Python',
+            'ReactFlow',
+            'Tailwind CSS',
+        ],
+        thumbnail: '/projects/thumbnail/project4.png',
+        longThumbnail: '/projects/long/project4.png',
+        images: [
+            '/projects/images/project4-1.png',
+            '/projects/images/project4-2.png',
+            '/projects/images/project4-3.png',
+        ],
+    },
+    {
+        title: 'Quizaroo',
+        slug: 'quizaroo',
+        liveUrl: 'https://manishprakkash.github.io/Quizaroo/',
+        sourceCode: 'https://github.com/ManishPrakkash/Quizaroo',
+        year: 2025,
+        description: `
+  <strong>Problem:</strong> Developers learning JavaScript needed an engaging, self-paced quiz platform that covers the full JS spectrum — from basics to ES6+ advanced patterns — with timed pressure and instant feedback to reinforce learning.<br/><br/>
+
+  <strong>Solution:</strong> Built Quizaroo, a modern interactive JavaScript quiz application using vanilla JavaScript, Tailwind CSS, and a clean modular architecture — featuring 20 curated questions across 4 difficulty levels, a 10-second countdown timer per question, instant answer feedback, and a full results breakdown with answer review.<br/><br/>
+
+  <strong>Key Features:</strong><br/>
+  <ul>
+    <li>🎯 <strong>20 Levelled Questions:</strong> 4 difficulty tiers — Level 1: Basics, Level 2: Core JS, Level 3: ES6 Features, Level 4: Advanced JS — 5 questions each</li>
+    <li>⏱️ <strong>10-Second Timer:</strong> Per-question visual countdown with automatic progression on timeout</li>
+    <li>✅ <strong>Instant Feedback:</strong> Correct/incorrect highlights immediately after each answer selection</li>
+    <li>📊 <strong>Detailed Results:</strong> Full score breakdown with per-question answer review at the end</li>
+    <li>♿ <strong>Accessibility:</strong> Semantic HTML, ARIA labels, keyboard navigation support, and color contrast compliance</li>
+    <li>🚀 <strong>CI/CD Pipeline:</strong> GitHub Actions workflow for automated linting and deployment to GitHub Pages on push to main</li>
+  </ul><br/>
+
+  <strong>Technical Implementation:</strong>
+  <ul>
+    <li>Built with zero external runtime dependencies — pure vanilla JavaScript using ES6+ features (classes, arrow functions, template literals, modules)</li>
+    <li>Followed modular architecture: <code>app.js</code> (controller), <code>quiz.js</code> (state & scoring), <code>timer.js</code> (reusable countdown), <code>questions.js</code> (data), <code>ui.js</code> (DOM rendering)</li>
+    <li>Applied Module, Observer, Singleton, and State Management patterns for clean separation of concerns</li>
+    <li>Styled with Tailwind CSS and custom CSS with dark mode via system preference detection</li>
+    <li>Used event delegation and efficient DOM manipulation for minimal memory footprint and optimized re-renders</li>
+    <li>Automated deployment via GitHub Actions to GitHub Pages with lint checks on every push</li>
+  </ul><br/>
+
+  <strong>Impact:</strong> Delivered a fully accessible, zero-dependency JavaScript quiz app with CI/CD automation, modular architecture, and 4-tier difficulty progression — live on GitHub Pages and ready to extend with new question sets.
+`,
+        role: `
+  <strong>Frontend Developer</strong><br/>
+  Designed and built the entire application from scratch:<br/>
+  <ul>
+    <li>🏗️ <strong>Architecture:</strong> Designed the 5-module vanilla JS architecture with clear separation between state, timer, data, rendering, and app control</li>
+    <li>⏱️ <strong>Timer Module:</strong> Built a reusable Observer-pattern timer with configurable duration, tick callbacks, and timeout handling</li>
+    <li>🎯 <strong>Quiz Engine:</strong> Implemented state management for question progression, scoring, answer tracking, and results compilation</li>
+    <li>🎨 <strong>UI Layer:</strong> Wrote all DOM rendering logic in <code>ui.js</code> using Tailwind CSS classes with smooth transitions, progress indicators, and responsive layout</li>
+    <li>♿ <strong>Accessibility:</strong> Added semantic HTML, ARIA labels, focus indicators, keyboard navigation, and WCAG color contrast compliance</li>
+    <li>🚀 <strong>CI/CD:</strong> Configured GitHub Actions workflow for automated lint checks and GitHub Pages deployment on every push to main</li>
+  </ul>
+`,
+        techStack: ['JavaScript', 'GitHub Pages', 'GitHub Actions', 'HTML5'],
+        thumbnail: '/projects/thumbnail/project3.png',
+        longThumbnail: '/projects/long/project3.png',
+        images: [
+            '/projects/images/project3-1.png',
+            '/projects/images/project3-2.png',
+            '/projects/images/project3-3.png',
+        ],
+    },
+    {
+        title: 'Secure Paste',
+        slug: 'secure-paste',
+        liveUrl:
+            'https://chromewebstore.google.com/detail/hicjfchdpgbghjilelabhpilcfnlggnk',
+        sourceCode: 'https://github.com/ManishPrakkash/Secure-Paste',
+        year: 2025,
+        description: `
+  <strong>Problem:</strong> Developers routinely paste code containing API keys, tokens, database credentials, and private keys into AI platforms like ChatGPT, Claude, and Gemini — accidentally leaking sensitive secrets to third-party services with no warning or protection.<br/><br/>
+
+  <strong>Solution:</strong> Built Secure Paste, a Chrome extension that automatically intercepts paste events on AI platforms, detects secrets using 33 built-in regex patterns, replaces them with reversible masked tokens in real-time, and restores original values when copying AI responses back — all processed 100% locally with no cloud involvement.<br/><br/>
+
+  <strong>Key Features:</strong><br/>
+  <ul>
+    <li>🔐 <strong>33 Detection Patterns:</strong> Covers AWS keys, GitHub/GitLab tokens, JWT/Bearer tokens, OpenAI/Stripe/Slack API keys, RSA/SSH/PGP private keys, PostgreSQL/MongoDB/Redis URLs, and more — across 8 toggleable categories</li>
+    <li>⚡ <strong>Real-time Masking:</strong> Secrets replaced instantly on paste with reversible tagged tokens (e.g. <code>[AWS_KEY#a3f7]</code>) before the AI platform ever sees the content</li>
+    <li>🔄 <strong>Automatic Restoration:</strong> Copying AI responses via Ctrl+C or platform copy buttons automatically restores original secret values into the clipboard</li>
+    <li>🎯 <strong>5 Platform Support:</strong> Pre-configured for ChatGPT, Claude, Google Gemini, Perplexity, and Grok with per-site enable/disable control</li>
+    <li>⚙️ <strong>Custom Patterns:</strong> Full regex support for adding company-specific secret patterns with per-pattern usage statistics</li>
+    <li>🔒 <strong>Zero Trust Architecture:</strong> 100% local processing — no servers, no telemetry, no cloud, minimal permissions (storage only), full open-source audit trail</li>
+  </ul><br/>
+
+  <strong>Technical Implementation:</strong>
+  <ul>
+    <li>Built as a Chrome Manifest V3 extension using TypeScript (strict mode), React 18, Vite 5, and Tailwind CSS</li>
+    <li>Implemented content scripts that intercept paste events and walk the DOM to find and replace secret patterns before input reaches AI platform text fields</li>
+    <li>Designed a bidirectional masking engine: forward pass replaces secrets with tagged tokens keyed by short hash; reverse pass restores originals on clipboard copy</li>
+    <li>Architected 8 category groups (Cloud, API tokens, Private keys, Passwords, Database, Network, PII, Custom) with individual toggles stored via Chrome <code>storage</code> API</li>
+    <li>Wrote 33 production-grade regex patterns covering broad secret formats with context-aware matching to minimize false positives</li>
+    <li>Published to Chrome Web Store with production build pipeline via Vite and TypeScript type-checking enforced in CI</li>
+  </ul><br/>
+
+  <strong>Impact:</strong> Delivered a published Chrome extension that silently protects developers from credential leaks on every AI paste — zero config, zero cloud, 33 pattern classes, live on the Chrome Web Store.
+`,
+        role: `
+  <strong>Browser Extension Developer</strong><br/>
+  Designed and shipped the full extension end-to-end:<br/>
+  <ul>
+    <li>🔍 <strong>Detection Engine:</strong> Wrote 33 regex patterns across 8 secret categories and built the context-aware matching pipeline to minimize false positives</li>
+    <li>🔄 <strong>Masking System:</strong> Implemented the bidirectional token engine — forward masking on paste and reverse restoration on clipboard copy, with short-hash keyed token mapping</li>
+    <li>🧩 <strong>Content Scripts:</strong> Built Chrome MV3 content scripts that hook into paste and copy events across ChatGPT, Claude, Gemini, Perplexity, and Grok DOM structures</li>
+    <li>🎨 <strong>Popup UI:</strong> Built the React 18 + Tailwind CSS settings panel with category toggles, custom pattern editor, per-site controls, and usage statistics</li>
+    <li>⚙️ <strong>Storage Layer:</strong> Wired all user preferences and custom patterns to the Chrome <code>storage</code> API with live sync between content scripts and popup</li>
+    <li>📦 <strong>Publishing:</strong> Packaged and published the extension to the Chrome Web Store with Vite production build and TypeScript strict-mode enforcement</li>
+  </ul>
+`,
+        techStack: [
+            'TypeScript',
+            'Chrome Extension',
+            'Manifest V3',
+            'React',
+            'Vite',
+            'Tailwind CSS',
+        ],
+        thumbnail: '/projects/thumbnail/project4.png',
+        longThumbnail: '/projects/long/project4.png',
+        images: [
+            '/projects/images/project4-1.png',
+            '/projects/images/project4-2.png',
+            '/projects/images/project4-3.png',
+        ],
+    },
+    {
+        title: 'CREDENT',
+        slug: 'credent',
+        sourceCode: 'https://github.com/ManishPrakkash/CRED',
+        year: 2025,
+        description: `
+  <strong>Problem:</strong> Educational institutions lacked a structured mobile system for advisors to manage staff performance points — submissions were manual, tracking was opaque, and there was no real-time visibility into approvals, rejections, or leaderboard standings.<br/><br/>
+
+  <strong>Solution:</strong> Built CRED Points, a React Native mobile application using Expo and Supabase that enables advisors to create classes with unique join codes, staff to submit work requests for point approval, and both roles to track points, view leaderboards, and receive real-time notifications — with full role-based access control and row-level security.<br/><br/>
+
+  <strong>Key Features:</strong><br/>
+  <ul>
+    <li>🏆 <strong>Point Request Workflow:</strong> Staff submit work requests with descriptions → Advisor approves / rejects / requests correction → Points auto-updated → Activity log created for full transparency</li>
+    <li>📊 <strong>Real-time Dashboards:</strong> Role-specific dashboards (Staff, Advisor, Representative) auto-refresh every 60 seconds with live point balances, monthly stats, and notification badges</li>
+    <li>🏅 <strong>Live Leaderboard:</strong> Class-wide performance rankings updated in real-time — staff compare standing with peers, advisors monitor top performers and engagement levels</li>
+    <li>🔐 <strong>Role-Based Access:</strong> Supabase Row-Level Security policies enforce staff / advisor permission boundaries on all database tables — JWT-authenticated API calls throughout</li>
+    <li>🔔 <strong>Notifications:</strong> Instant in-app notifications on request approval, rejection, and correction requests — with notification badges on the bottom nav</li>
+    <li>🛡️ <strong>Smart Navigation Guards:</strong> Prevents unauthorized route access, redirects classless staff to join page, disables back navigation on sensitive screens, and conditionally renders bottom nav based on user state</li>
+  </ul><br/>
+
+  <strong>Technical Implementation:</strong>
+  <ul>
+    <li>Built cross-platform mobile app with Expo SDK 54, React Native 0.81, and TypeScript using Expo Router file-based routing</li>
+    <li>Styled with NativeWind (Tailwind CSS for React Native) and custom components with Linear Gradients and Lucide icons</li>
+    <li>Integrated Supabase for PostgreSQL database, email/password authentication, RLS policies, and real-time data sync</li>
+    <li>Managed auth and class state globally via React Context API with AsyncStorage for local session persistence</li>
+    <li>Architected 6-table schema: users, classes, joined_classes, requests, activities, notifications — with cascade delete and many-to-many staff-class relationships</li>
+    <li>Added React Native Reanimated animations, safe area insets for gesture navigation devices, and auto-padding for 3-button navigation bars</li>
+  </ul><br/>
+
+  <strong>Impact:</strong> Delivered a production-ready mobile app serving two distinct roles — staff and advisors — with a full request lifecycle, live leaderboards, role-gated navigation, and Supabase-backed real-time data across Android and iOS.
+`,
+        role: `
+  <strong>Full-Stack Mobile Developer</strong><br/>
+  Designed and built the entire system end-to-end:<br/>
+  <ul>
+    <li>📱 <strong>Mobile App:</strong> Built the full Expo + React Native app with file-based Expo Router navigation, role-specific dashboards, and NativeWind styling</li>
+    <li>🗄️ <strong>Database Design:</strong> Designed the 6-table Supabase PostgreSQL schema with RLS policies, cascade operations, and indexed relationships for staff-class-request flows</li>
+    <li>🔐 <strong>Auth & Security:</strong> Wired up Supabase email/password auth with JWT token management, row-level security enforcement, and role-based navigation guards</li>
+    <li>🔄 <strong>Request Workflow:</strong> Implemented the full approve/reject/correction lifecycle with automatic point updates, activity logging, and notification dispatch on each state change</li>
+    <li>🏆 <strong>Leaderboard & Analytics:</strong> Built real-time class leaderboards and advisor performance analytics with 60-second auto-refresh and live notification badges</li>
+    <li>⚙️ <strong>State Management:</strong> Architected AuthContext and ClassContext providers with AsyncStorage persistence for seamless session restore and class state across app restarts</li>
+  </ul>
+`,
+        techStack: [
+            'React Native',
+            'Expo',
+            'PostgreSQL',
+            'TypeScript',
+            'Supabase',
+            'NativeWind',
+        ],
+        thumbnail: '/projects/thumbnail/project4.png',
+        longThumbnail: '/projects/long/project4.png',
+        images: [
+            '/projects/images/project4-1.png',
+            '/projects/images/project4-2.png',
+            '/projects/images/project4-3.png',
+        ],
+    },
 ];
 
 export const MY_EXPERIENCE = [
