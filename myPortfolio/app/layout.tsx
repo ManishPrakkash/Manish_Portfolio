@@ -19,7 +19,7 @@ import MaintenanceCursor from './_components/MaintenanceCursor';
 // Set to `true` to show the "Under Development" page to all visitors.
 // Set to `false` to restore the normal portfolio.
 // You can also use an environment variable: process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true'
-const MAINTENANCE_MODE = false;
+const MAINTENANCE_MODE = true;
 // ───────────────────────────────────────────────────────────────────────────
 // Force reload trigger
 // Optimized font loading with display: swap for better performance
