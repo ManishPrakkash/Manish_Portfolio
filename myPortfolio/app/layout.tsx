@@ -15,6 +15,7 @@ import MaintenancePage from './_components/MaintenanceView';
 import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
 import { RESOURCE_HINTS } from '@/lib/performance';
 import MaintenanceCursor from './_components/MaintenanceCursor';
+import GlobalParticle from '@/components/GlobalParticle';
 
 // ─── MAINTENANCE MODE TOGGLE ───────────────────────────────────────────────
 // Set to `true` to show the "Under Development" page to all visitors.
@@ -149,13 +150,19 @@ export default function RootLayout({
                             <Navbar />
                             <main>{children}</main>
                             <Footer />
-
-                            <ClientLayout />
-                            <Preloader />
-                            <StickyEmail />
                         </>
                     )}
                 </SmoothScroll>
+
+                <GlobalParticle />
+
+                {!MAINTENANCE_MODE && (
+                    <>
+                        <ClientLayout />
+                        <Preloader />
+                        <StickyEmail />
+                    </>
+                )}
             </body>
             <GoogleAnalytics gaId="G-MBGQG95ZVK" />
             <Analytics />

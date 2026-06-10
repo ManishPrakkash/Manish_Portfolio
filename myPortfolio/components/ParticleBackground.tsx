@@ -30,26 +30,29 @@ const ParticleBackground = memo(() => {
     );
 
     useGSAP(() => {
-        if (!shouldAnimate || particleCount === 0) return;
+        if (particleCount === 0) return;
 
         particlesRef.current.forEach((particle) => {
             if (!particle) return;
             
             gsap.set(particle, {
-                width: Math.random() * 3 + 1,
-                height: Math.random() * 3 + 1,
-                opacity: Math.random() * 0.6, // Reduced opacity for subtler effect
+                width: Math.random() * 3 + 2, // 2 to 5px
+                height: Math.random() * 3 + 2, // 2 to 5px
+                opacity: Math.random() * 0.4 + 0.3, // 0.3 to 0.7 base opacity
                 left: Math.random() * window.innerWidth,
-                top: Math.random() * (window.innerHeight + 1),
+                top: Math.random() * window.innerHeight,
             });
 
-            gsap.to(particle, {
-                y: window.innerHeight,
-                duration: Math.random() * 10 + 10,
-                opacity: 0,
-                repeat: -1,
-                ease: 'none',
-            });
+            if (shouldAnimate) {
+                gsap.to(particle, {
+                    opacity: Math.random() * 0.5 + 0.5, // 0.5 to 1.0 peak twinkle opacity
+                    duration: Math.random() * 3 + 2, // 2 to 5 second duration
+                    repeat: -1,
+                    yoyo: true, // Smoothly fade back and forth
+                    ease: 'sine.inOut',
+                    delay: Math.random() * 5, // Randomize when they start twinkling
+                });
+            }
         });
     }, [particleCount, shouldAnimate]);
 
@@ -57,7 +60,7 @@ const ParticleBackground = memo(() => {
     if (particleCount === 0) return null;
 
     return (
-        <div className="fixed inset-0 z-0 pointer-events-none" aria-hidden="true">
+        <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }} aria-hidden="true">
             {particles.map((i) => (
                 <div
                     key={i}

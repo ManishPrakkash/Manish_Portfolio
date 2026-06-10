@@ -42,7 +42,7 @@ export default function MaintenancePage() {
     return (
         <div
             ref={containerRef}
-            className="relative min-h-screen w-full bg-[#1a1a1a] flex flex-col items-center justify-center font-[family-name:var(--font-roboto-flex)] overflow-hidden"
+            className="relative min-h-screen w-full bg-transparent flex flex-col items-center justify-center font-[family-name:var(--font-roboto-flex)] overflow-hidden"
         >
             {/* ── Ultra Minimal Ambient Glow ──────────────────── */}
             <div
