@@ -21,7 +21,7 @@ import GlobalParticle from '@/components/GlobalParticle';
 // Set to `true` to show the "Under Development" page to all visitors.
 // Set to `false` to restore the normal portfolio.
 // You can also use an environment variable: process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true'
-const MAINTENANCE_MODE = true;
+const MAINTENANCE_MODE = false;
 // ───────────────────────────────────────────────────────────────────────────
 // Force reload trigger
 // Optimized font loading with display: swap for better performance
@@ -43,11 +43,11 @@ const robotoFlex = Roboto_Flex({
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://manishprakkashms.vercel.app'),
-    title: 'Manish Prakkash - Full Stack MERN Developer Portfolio',
+    title: 'Manish Prakkash - DevOps Engineer Portfolio',
     description:
-        'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript. Explore my projects and skills.',
+        'DevOps Engineer specializing in scalable cloud infrastructure, automated pipelines, and full-stack architecture. Explore my projects and skills.',
     keywords: [
-        'Full Stack Developer',
+        'DevOps Engineer',
         'React',
         'Node.js',
         'JavaScript',
@@ -62,9 +62,9 @@ export const metadata: Metadata = {
         canonical: '/',
     },
     openGraph: {
-        title: 'Manish Prakkash - Full Stack MERN Developer Portfolio',
+        title: 'Manish Prakkash - DevOps Engineer Portfolio',
         description:
-            'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript.',
+            'DevOps Engineer specializing in scalable cloud infrastructure, automated pipelines, and full-stack architecture.',
         url: 'https://manishprakkashms.vercel.app',
         type: 'website',
         locale: 'en_US',
@@ -72,9 +72,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Manish Prakkash - Full Stack MERN Developer Portfolio',
+        title: 'Manish Prakkash - DevOps Engineer Portfolio',
         description:
-            'Full Stack MERN Developer with 1+ years building scalable web solutions using React, Node.js, MongoDB, Express, and TypeScript.',
+            'DevOps Engineer specializing in scalable cloud infrastructure, automated pipelines, and full-stack architecture.',
     },
 };
 
@@ -89,7 +89,7 @@ const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Manish Prakkash',
-    jobTitle: 'Full Stack MERN Developer',
+    jobTitle: 'DevOps Engineer',
     url: 'https://manishprakkashms.vercel.app',
     sameAs: SOCIAL_LINKS.map((link) => link.url),
     knowsAbout: [
@@ -101,8 +101,8 @@ const structuredData = {
         'Tailwind CSS',
         'Firebase',
         'JavaScript',
-        'Full Stack Development',
-        'MERN Stack',
+        'DevOps',
+        'Cloud Infrastructure',
     ],
     email: GENERAL_INFO.email,
 };

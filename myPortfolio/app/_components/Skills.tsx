@@ -62,7 +62,7 @@ const Skills = () => {
             <div className="container">
                 <SectionTitle title="My Stack" />
                 <p className="mt-6 mb-12 text-lg text-muted-foreground max-w-3xl">
-                    A production‑focused <strong>MERN / TypeScript</strong> toolkit covering <strong>frontend performance</strong>, <strong>accessibility</strong>, <strong>API design</strong>, and <strong>database modeling</strong>. Each technology is selected to accelerate development while keeping deployments secure, maintainable, and SEO‑friendly.
+                    A production-focused toolkit bridging <strong>cloud infrastructure</strong> and full‑stack engineering. Spanning <strong>CI/CD automation</strong>, <strong>secure API design</strong>, and <strong>scalable databases</strong>, each technology is selected to ship code faster while keeping deployments highly secure, scalable, and resilient.
                 </p>
 
                 <div className="space-y-20">

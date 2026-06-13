@@ -55,19 +55,15 @@ const AboutMe = () => {
         <section className="pb-section" id="about-me">
             <div className="container" ref={container}>
                 <h2 className="text-4xl md:text-6xl font-thin mb-12 slide-up-and-fade">
-                    Full Stack MERN & React.js Developer focused on
-                    user‑centered design and scalable, performant web
-                    applications.
+                    Software Engineer focused on scalable infrastructure,
+                    security, and full‑stack delivery.
                 </h2>
                 <p className="text-lg md:text-xl mb-16 slide-up-and-fade text-muted-foreground max-w-3xl">
-                    I craft responsive, accessible interfaces with{' '}
-                    <strong>React.js</strong>, implement secure APIs using{' '}
-                    <strong>Node.js</strong> & <strong>Express</strong>,
-                    optimize data flows with <strong>MongoDB</strong>, and
-                    leverage <strong>Next.js</strong> for server‑side rendering,
-                    SEO, and performance. My approach blends clean architecture,
-                    semantic Design, progressive enhancement, and measurable
-                    performance budgets to deliver real business value.
+                    From designing automated <strong>CI/CD pipelines</strong>{' '}
+                    and resilient cloud architecture to crafting
+                    high-performance <strong>React/Next.js</strong> frontends, I
+                    engineer full software lifecycles that scale securely from
+                    day one.
                 </p>
 
                 <p className="pb-3 border-b text-muted-foreground slide-up-and-fade">
@@ -83,25 +79,18 @@ const AboutMe = () => {
                     <div className="md:col-span-7">
                         <div className="text-lg text-muted-foreground max-w-[450px]">
                             <p className="slide-up-and-fade">
-                                I&apos;m a <strong>MERN stack developer</strong>{' '}
-                                and 2nd‑year CSE student, building seamless,
-                                responsive, user‑focused web experiences. I
-                                specialize in intuitive UI development with{' '}
-                                <strong>React</strong> &{' '}
-                                <strong>Next.js</strong> while expanding backend
-                                expertise across <strong>Node.js</strong>,{' '}
-                                <strong>Express</strong>, and{' '}
-                                <strong>MongoDB</strong>.
+                                I engineer reliable platforms from the cloud
+                                down to the UI. I specialize in{' '}
+                                <strong>DevSecOps</strong> and full-stack
+                                architecture, bridging the gap between writing
+                                code and shipping secure, automated deployments.
                             </p>
                             <p className="mt-3 slide-up-and-fade">
-                                I focus on <strong>scalability</strong>,{' '}
-                                <strong>performance optimization</strong> (Core
-                                Web Vitals), <strong>accessibility</strong>, and
-                                maintainable code architecture. I enjoy
-                                translating product requirements into reliable,
-                                testable full‑stack solutions with JWT
-                                authentication, RESTful APIs, efficient state
-                                management, and data modeling.
+                                More than just building features, my focus is on architecting robust solutions. My work emphasizes{' '}
+                                <strong>infrastructure as code</strong>,
+                                zero-trust security, and resilient backend
+                                modeling to deliver products that perform under
+                                pressure.
                             </p>
                         </div>
                     </div>

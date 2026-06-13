@@ -42,17 +42,17 @@ const Banner = () => {
             >
                 <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-[544px]">
                     <h1 className="banner-title slide-up-and-fade leading-[.95] text-6xl sm:text-[80px] font-anton">
-                        <span className="text-primary">FULL STACK</span>
-                        <br /> <span className="ml-7">DEVELOPER</span>
+                        <span className="text-primary">DEVOPS</span>
+                        <br /> <span>ENGINEER</span>
                     </h1>
                     <p className="banner-description slide-up-and-fade mt-6 text-lg text-muted-foreground">
                         Hi! I&apos;m{' '}
                         <span className="font-medium text-foreground">
                             MANISH PRAKKASH
                         </span>
-                        . A creative Full Stack Developer with 1+ years of
-                        experience in building high-performance, scalable, and
-                        responsive web solutions.
+                        . A Cloud & Systems Builder. <br />
+                        I automate infrastructure, lock down security, and engineer efficient, scalable
+                        applications built to survive production traffic.
                     </p>
                     <div className="flex gap-4 mt-9">
                         <Button
@@ -73,7 +73,7 @@ const Banner = () => {
                             variant="light"
                             className="banner-button slide-up-and-fade [&>span]:!top-[200%] [&>span]:!group-hover:top-[200%]"
                         >
-                            Download CV
+                            Download Resume
                         </Button>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ const Banner = () => {
                 <div className="md:absolute bottom-[10%] right-[4%] flex md:flex-col gap-4 md:gap-8 text-center md:text-right">
                     <div className="slide-up-and-fade">
                         <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
-                            1+
+                            1.5+
                         </h5>
                         <p className="text-muted-foreground">
                             Years of Experience
@@ -89,7 +89,7 @@ const Banner = () => {
                     </div>
                     <div className="slide-up-and-fade">
                         <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
-                            3+
+                            10+
                         </h5>
                         <p className="text-muted-foreground">
                             Completed Projects

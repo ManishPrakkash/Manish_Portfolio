@@ -195,16 +195,8 @@ const ProjectDetails = ({ project }: Props) => {
                                 sizes="(max-width: 800px) 100vw, 800px"
                                 priority={i === 0}
                                 loading={i === 0 ? 'eager' : 'lazy'}
-                                className="object-cover will-change-transform select-none"
+                                className="object-contain will-change-transform select-none p-2"
                             />
-                            <a
-                                href={image}
-                                target="_blank"
-                                rel="noreferrer noopener"
-                                className="absolute top-4 right-4 bg-background/70 text-foreground size-12 inline-flex justify-center items-center transition-all opacity-0 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100"
-                            >
-                                <ExternalLink />
-                            </a>
                         </div>
                     ))}
                 </div>

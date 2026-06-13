@@ -7,7 +7,7 @@ export const GENERAL_INFO = {
     emailBody: 'Hi Manish, I am reaching out to you because...',
 
     upworkProfile: 'https://www.linkedin.com/in/manish-prakkash-03b3a931a/',
-    cvDownload: '/cv/Manish-Prakkash-CV.pdf',
+    cvDownload: '/cv/ManishPrakkash(24CS130)-Resume.pdf',
 };
 
 export const SOCIAL_LINKS = [
@@ -95,62 +95,67 @@ export const MY_STACK = {
 
 export const PROJECTS: IProject[] = [
     {
-        title: 'Engal Sandhai',
-        slug: 'engal-sandhai',
-        liveUrl: 'https://engal-sandhai.web.app/',
-        sourceCode: 'https://github.com/ManishPrakkash/Engal-Sandhai',
-        year: 2026,
+        title: 'Artifex',
+        slug: 'artifex',
+        liveUrl: 'https://artifex-22767.firebaseapp.com',
+        sourceCode: 'https://github.com/ManishPrakkash/Artifex',
+        year: 2025,
         description: `
-  <strong>Problem:</strong> The college campus vegetable store lacked an efficient way to manage daily stock and process orders for over 300 faculty members, relying on manual billing and causing stock overselling issues.<br/><br/>
+  <strong>Problem:</strong> Building multi-agent AI systems requires deep technical knowledge of agent frameworks, architecture design, and Python code generation — a complex, time-consuming process inaccessible to most developers without specialist expertise.<br/><br/>
 
-  <strong>Solution:</strong> Built Engal Sandhai, a web-based, intranet-only billing and realtime stock management system connecting 300+ daily active faculty buyers with admin staff. The platform streamlines orders, handles static QR-based payments, and perfectly syncs inventory.<br/><br/>
+  <strong>Solution:</strong> Built Artifex, a next-generation AI agent builder that converts natural language requirements into complete, production-ready multi-agent Python systems using Google ADK, featuring a FastAPI/WebSocket backend, a visual Next.js frontend with real-time graph visualization, and a meta-agent orchestrator that runs sub-agents for requirements analysis, architecture planning, tool generation, and code output.<br/><br/>
 
   <strong>Key Features:</strong><br/>
   <ul>
-    <li>⚡ <strong>Realtime Updates:</strong> Instant stock sync and live new-order notifications across all connected clients via WebSockets.</li>
-    <li>🧮 <strong>Atomic Transactions:</strong> Multi-item order processing with atomic stock decrements to completely prevent race conditions and overselling.</li>
-    <li>🔐 <strong>Role-Based Auth:</strong> Employee ID-based authentication with forced password resets and strict per-order session rules (auto-logout after payment upload).</li>
-    <li>🛍️ <strong>Purchasing & Billing:</strong> Comprehensive buying panel with cart management, automated bill generation, and payment screenshot uploads.</li>
-    <li>🛠️ <strong>Admin Dashboard:</strong> Full control over daily stock updates, price management, manual payment verification, and order reverting.</li>
+    <li>🧠 <strong>Meta-Agent Orchestration:</strong> Google ADK-powered orchestrator chains specialized sub-agents (Requirements Analyzer → Architecture Planner → Agent Builder → Tool Builder → Code Generator → Validator) to convert free-text into executable Python projects</li>
+    <li>📊 <strong>Visual Agent Graph:</strong> Real-time ReactFlow architecture visualization streamed over WebSocket — shows agent nodes, tool connections, and sub-agent hierarchies as they are built</li>
+    <li>🔧 <strong>Custom Tool Generation:</strong> Generates Python tool functions with error handling for Google Search, URL context, API integrations, data processing, and file I/O</li>
+    <li>💻 <strong>Integrated Code Editor:</strong> Syntax-highlighted TipTap editor for previewing and editing the generated <code>agent.py</code>, <code>tools.py</code>, <code>requirements.txt</code>, and <code>README.md</code> inline</li>
+    <li>🔄 <strong>4 Agent Type Support:</strong> Generates LLM Agent, Sequential Agent, Parallel Agent, and Loop Agent configurations with correct ADK wiring</li>
+    <li>🚀 <strong>Session Management:</strong> Persistent config state across the full creation conversation — requirements, architecture, tool specs, and generated files survive multi-turn sessions</li>
   </ul><br/>
 
-  <strong>Technical Implementation:</strong>
+  <strong>Technical Implementation:</strong><br/>
   <ul>
-    <li>Architected a highly responsive real-time backend using Firebase Authentication and Firestore database.</li>
-    <li>Implemented WebSockets for live stock synchronization and instant admin notifications.</li>
-    <li>Ensured data integrity during high-concurrency periods using atomic Firestore transactions.</li>
-    <li>Deployed as a lightweight, intranet-only self-hosted stack eliminating the need for paid cloud infrastructure.</li>
+    <li>Built meta-agent system with Google ADK, coordinating 6 specialized sub-agents via a root orchestrator defined in Pydantic config schemas</li>
+    <li>Designed FastAPI REST + WebSocket API with live progress streaming to the frontend during code generation</li>
+    <li>Built Next.js frontend with ReactFlow for interactive agent graph visualization, TipTap for code editing, and Tailwind CSS + shadcn/ui for the interface</li>
+    <li>Implemented config-to-code pipeline converting validated Pydantic agent configs into complete Python ADK project files</li>
+    <li>Supported 8+ builtin tools (google_search, url_context, load_memory, transfer_to_agent, exit_loop, etc.) and arbitrary custom Python tool generation</li>
+    <li>Auto-detected monorepo structures and generated project-ready output with <code>requirements.txt</code> and <code>README.md</code> for immediate use</li>
   </ul><br/>
 
-  <strong>Impact:</strong> Currently in active production use by 300+ college staff members daily, completely digitizing the campus vegetable store's billing and inventory workflow.
+  <strong>Impact:</strong> Delivered a full-stack AI agent builder that collapses multi-agent system development from hours of manual coding into a single natural language conversation — producing complete, runnable Python ADK projects with visual architecture previews and integrated editing.
 `,
         role: `
-  <strong>Backend Developer & Deployment Engineer</strong><br/>
-  Led the backend architecture and production deployment:<br/>
+  <strong>Full-Stack AI Systems Developer</strong><br/>
+  Designed and built the entire platform end-to-end:<br/>
   <ul>
-    <li>🗄️ <strong>Database Architecture:</strong> Designed the Firestore schema for users, orders, and real-time stock tracking.</li>
-    <li>⚡ <strong>Atomic Transactions:</strong> Engineered the critical order-processing logic using Firestore atomic transactions to prevent overselling during peak purchase times.</li>
-    <li>📡 <strong>Realtime Infrastructure:</strong> Integrated WebSockets and Firestore listeners for instant state synchronization across 300+ concurrent clients.</li>
-    <li>🔐 <strong>Security & Auth:</strong> Configured Firebase Auth and security rules for strict role-based access control between Admin faculty and standard users.</li>
-    <li>🚀 <strong>Deployment:</strong> Configured and deployed the entire system on a local intranet-only environment for zero-cost, high-speed operation.</li>
+    <li>🤖 <strong>Meta-Agent System:</strong> Architected the Google ADK orchestrator and 6 specialized sub-agents with Pydantic-validated config schemas and prompt templates</li>
+    <li>🔧 <strong>Code Generation Pipeline:</strong> Built the config-to-code engine that converts structured agent configs into complete, production-ready Python ADK projects</li>
+    <li>🌐 <strong>Backend API:</strong> Developed FastAPI REST and WebSocket endpoints for real-time progress streaming and session management throughout the agent creation flow</li>
+    <li>🎨 <strong>Frontend Interface:</strong> Built the Next.js app with ReactFlow agent graph visualization, TipTap code editor, and full dark/light mode support with shadcn/ui components</li>
+    <li>🛠️ <strong>Tool Builder:</strong> Implemented the custom Python tool generator supporting API integrations, data processing tools, file I/O, and all 8+ Google ADK builtin tools</li>
+    <li>📦 <strong>Project Output:</strong> Wired up the full file generation pipeline producing <code>agent.py</code>, <code>tools.py</code>, <code>requirements.txt</code>, and <code>README.md</code> as a downloadable Python project</li>
   </ul>
 `,
         techStack: [
-            'React',
-            'Firebase',
-            'Firestore',
+            'Google ADK',
             'WebSockets',
+            'FastAPI',
+            'Python',
+            'ReactFlow',
             'Tailwind CSS',
-            'TypeScript',
         ],
-        thumbnail: '/projects/thumbnail/engal-sandhai.png',
-        longThumbnail: '/projects/long/engal-sandhai.png',
+        thumbnail: '/projects/artifex/main.png',
+        longThumbnail: '/projects/artifex/main.png',
         images: [
-            '/projects/images/engal-sandhai1.png',
-            '/projects/images/engal-sandhai2.png',
-            '/projects/images/engal-sandhai3.png',
+            '/projects/artifex/1.png',
+            '/projects/artifex/2.png',
+            '/projects/artifex/3.png',
         ],
     },
+
 
     {
         title: 'Cloud Meter',
@@ -204,82 +209,77 @@ export const PROJECTS: IProject[] = [
             'TypeScript',
             'Prisma',
         ],
-        thumbnail: '/projects/thumbnail/project3.png',
-        longThumbnail: '/projects/long/project3.png',
+        thumbnail: '/projects/cloud-meter/main.png',
+        longThumbnail: '/projects/cloud-meter/main.png',
         images: [
-            '/projects/images/project3-1.png',
-            '/projects/images/project3-2.png',
-            '/projects/images/project3-3.png',
+            '/projects/cloud-meter/1.png',
+            '/projects/cloud-meter/2.png',
+            '/projects/cloud-meter/3.png',
         ],
     },
-    {
-        title: 'Artifex',
-        slug: 'artifex',
-        liveUrl: 'https://artifex-22767.firebaseapp.com',
-        sourceCode: 'https://github.com/ManishPrakkash/Artifex',
-        year: 2025,
-        description: `
-  <strong>Problem:</strong> Building multi-agent AI systems requires deep technical knowledge of agent frameworks, architecture design, and Python code generation — a complex, time-consuming process inaccessible to most developers without specialist expertise.<br/><br/>
 
-  <strong>Solution:</strong> Built Artifex, a next-generation AI agent builder that converts natural language requirements into complete, production-ready multi-agent Python systems using Google ADK, featuring a FastAPI/WebSocket backend, a visual Next.js frontend with real-time graph visualization, and a meta-agent orchestrator that runs sub-agents for requirements analysis, architecture planning, tool generation, and code output.<br/><br/>
+    {
+        title: 'Engal Sandhai',
+        slug: 'engal-sandhai',
+        liveUrl: 'https://engal-sandhai.web.app/',
+        sourceCode: 'https://github.com/ManishPrakkash/Engal-Sandhai',
+        year: 2026,
+        description: `
+  <strong>Problem:</strong> The college campus vegetable store lacked an efficient way to manage daily stock and process orders for over 300 faculty members, relying on manual billing and causing stock overselling issues.<br/><br/>
+
+  <strong>Solution:</strong> Built Engal Sandhai, a web-based, intranet-only billing and realtime stock management system connecting 300+ daily active faculty buyers with admin staff. The platform streamlines orders, handles static QR-based payments, and perfectly syncs inventory.<br/><br/>
 
   <strong>Key Features:</strong><br/>
   <ul>
-    <li>🧠 <strong>Meta-Agent Orchestration:</strong> Google ADK-powered orchestrator chains specialized sub-agents (Requirements Analyzer → Architecture Planner → Agent Builder → Tool Builder → Code Generator → Validator) to convert free-text into executable Python projects</li>
-    <li>📊 <strong>Visual Agent Graph:</strong> Real-time ReactFlow architecture visualization streamed over WebSocket — shows agent nodes, tool connections, and sub-agent hierarchies as they are built</li>
-    <li>🔧 <strong>Custom Tool Generation:</strong> Generates Python tool functions with error handling for Google Search, URL context, API integrations, data processing, and file I/O</li>
-    <li>💻 <strong>Integrated Code Editor:</strong> Syntax-highlighted TipTap editor for previewing and editing the generated <code>agent.py</code>, <code>tools.py</code>, <code>requirements.txt</code>, and <code>README.md</code> inline</li>
-    <li>🔄 <strong>4 Agent Type Support:</strong> Generates LLM Agent, Sequential Agent, Parallel Agent, and Loop Agent configurations with correct ADK wiring</li>
-    <li>🚀 <strong>Session Management:</strong> Persistent config state across the full creation conversation — requirements, architecture, tool specs, and generated files survive multi-turn sessions</li>
+    <li>⚡ <strong>Realtime Updates:</strong> Instant stock sync and live new-order notifications across all connected clients via WebSockets.</li>
+    <li>🧮 <strong>Atomic Transactions:</strong> Multi-item order processing with atomic stock decrements to completely prevent race conditions and overselling.</li>
+    <li>🔐 <strong>Role-Based Auth:</strong> Employee ID-based authentication with forced password resets and strict per-order session rules (auto-logout after payment upload).</li>
+    <li>🛍️ <strong>Purchasing & Billing:</strong> Comprehensive buying panel with cart management, automated bill generation, and payment screenshot uploads.</li>
+    <li>🛠️ <strong>Admin Dashboard:</strong> Full control over daily stock updates, price management, manual payment verification, and order reverting.</li>
   </ul><br/>
 
-  <strong>Technical Implementation:</strong><br/>
+  <strong>Technical Implementation:</strong>
   <ul>
-    <li>Built meta-agent system with Google ADK, coordinating 6 specialized sub-agents via a root orchestrator defined in Pydantic config schemas</li>
-    <li>Designed FastAPI REST + WebSocket API with live progress streaming to the frontend during code generation</li>
-    <li>Built Next.js frontend with ReactFlow for interactive agent graph visualization, TipTap for code editing, and Tailwind CSS + shadcn/ui for the interface</li>
-    <li>Implemented config-to-code pipeline converting validated Pydantic agent configs into complete Python ADK project files</li>
-    <li>Supported 8+ builtin tools (google_search, url_context, load_memory, transfer_to_agent, exit_loop, etc.) and arbitrary custom Python tool generation</li>
-    <li>Auto-detected monorepo structures and generated project-ready output with <code>requirements.txt</code> and <code>README.md</code> for immediate use</li>
+    <li>Architected a highly responsive real-time backend using Firebase Authentication and Firestore database.</li>
+    <li>Implemented WebSockets for live stock synchronization and instant admin notifications.</li>
+    <li>Ensured data integrity during high-concurrency periods using atomic Firestore transactions.</li>
+    <li>Deployed as a lightweight, intranet-only self-hosted stack eliminating the need for paid cloud infrastructure.</li>
   </ul><br/>
 
-  <strong>Impact:</strong> Delivered a full-stack AI agent builder that collapses multi-agent system development from hours of manual coding into a single natural language conversation — producing complete, runnable Python ADK projects with visual architecture previews and integrated editing.
+  <strong>Impact:</strong> Currently in active production use by 300+ college staff members daily, completely digitizing the campus vegetable store's billing and inventory workflow.
 `,
         role: `
-  <strong>Full-Stack AI Systems Developer</strong><br/>
-  Designed and built the entire platform end-to-end:<br/>
+  <strong>Backend Developer & Deployment Engineer</strong><br/>
+  Led the backend architecture and production deployment:<br/>
   <ul>
-    <li>🤖 <strong>Meta-Agent System:</strong> Architected the Google ADK orchestrator and 6 specialized sub-agents with Pydantic-validated config schemas and prompt templates</li>
-    <li>🔧 <strong>Code Generation Pipeline:</strong> Built the config-to-code engine that converts structured agent configs into complete, production-ready Python ADK projects</li>
-    <li>🌐 <strong>Backend API:</strong> Developed FastAPI REST and WebSocket endpoints for real-time progress streaming and session management throughout the agent creation flow</li>
-    <li>🎨 <strong>Frontend Interface:</strong> Built the Next.js app with ReactFlow agent graph visualization, TipTap code editor, and full dark/light mode support with shadcn/ui components</li>
-    <li>🛠️ <strong>Tool Builder:</strong> Implemented the custom Python tool generator supporting API integrations, data processing tools, file I/O, and all 8+ Google ADK builtin tools</li>
-    <li>📦 <strong>Project Output:</strong> Wired up the full file generation pipeline producing <code>agent.py</code>, <code>tools.py</code>, <code>requirements.txt</code>, and <code>README.md</code> as a downloadable Python project</li>
+    <li>🗄️ <strong>Database Architecture:</strong> Designed the Firestore schema for users, orders, and real-time stock tracking.</li>
+    <li>⚡ <strong>Atomic Transactions:</strong> Engineered the critical order-processing logic using Firestore atomic transactions to prevent overselling during peak purchase times.</li>
+    <li>📡 <strong>Realtime Infrastructure:</strong> Integrated WebSockets and Firestore listeners for instant state synchronization across 300+ concurrent clients.</li>
+    <li>🔐 <strong>Security & Auth:</strong> Configured Firebase Auth and security rules for strict role-based access control between Admin faculty and standard users.</li>
+    <li>🚀 <strong>Deployment:</strong> Configured and deployed the entire system on a local intranet-only environment for zero-cost, high-speed operation.</li>
   </ul>
 `,
         techStack: [
-            'Google ADK',
+            'React',
+            'Firebase',
+            'Firestore',
             'WebSockets',
-            'FastAPI',
-            'Python',
-            'ReactFlow',
             'Tailwind CSS',
+            'TypeScript',
         ],
-        thumbnail: '/projects/thumbnail/project4.png',
-        longThumbnail: '/projects/long/project4.png',
+        thumbnail: '/projects/engal-sandhai/main.png',
+        longThumbnail: '/projects/engal-sandhai/main.png',
         images: [
-            '/projects/images/project4-1.png',
-            '/projects/images/project4-2.png',
-            '/projects/images/project4-3.png',
+            '/projects/engal-sandhai/1.png',
+            '/projects/engal-sandhai/2.png',
+            '/projects/engal-sandhai/3.png',
         ],
     },
+
 
     {
         title: 'Secure Paste',
         slug: 'secure-paste',
-        liveUrl:
-            'https://chromewebstore.google.com/detail/hicjfchdpgbghjilelabhpilcfnlggnk',
-        sourceCode: 'https://github.com/ManishPrakkash/Secure-Paste',
         year: 2025,
         description: `
   <strong>Problem:</strong> Developers routinely paste code containing API keys, tokens, database credentials, and private keys into AI platforms like ChatGPT, Claude, and Gemini — accidentally leaking sensitive secrets to third-party services with no warning or protection.<br/><br/>
@@ -328,74 +328,15 @@ export const PROJECTS: IProject[] = [
             'Vite',
             'Tailwind CSS',
         ],
-        thumbnail: '/projects/thumbnail/project4.png',
-        longThumbnail: '/projects/long/project4.png',
+        thumbnail: '/projects/secure-paste/main.png',
+        longThumbnail: '/projects/secure-paste/main.png',
         images: [
-            '/projects/images/project4-1.png',
-            '/projects/images/project4-2.png',
-            '/projects/images/project4-3.png',
+            '/projects/secure-paste/1.png',
+            '/projects/secure-paste/2.png',
+            '/projects/secure-paste/3.png',
         ],
     },
-    {
-        title: 'CREDENT',
-        slug: 'credent',
-        sourceCode: 'https://github.com/ManishPrakkash/CRED',
-        year: 2025,
-        description: `
-  <strong>Problem:</strong> Educational institutions lacked a structured mobile system for advisors to manage staff performance points — submissions were manual, tracking was opaque, and there was no real-time visibility into approvals, rejections, or leaderboard standings.<br/><br/>
 
-  <strong>Solution:</strong> Built CRED Points, a React Native mobile application using Expo and Supabase that enables advisors to create classes with unique join codes, staff to submit work requests for point approval, and both roles to track points, view leaderboards, and receive real-time notifications — with full role-based access control and row-level security.<br/><br/>
-
-  <strong>Key Features:</strong><br/>
-  <ul>
-    <li>🏆 <strong>Point Request Workflow:</strong> Staff submit work requests with descriptions → Advisor approves / rejects / requests correction → Points auto-updated → Activity log created for full transparency</li>
-    <li>📊 <strong>Real-time Dashboards:</strong> Role-specific dashboards (Staff, Advisor, Representative) auto-refresh every 60 seconds with live point balances, monthly stats, and notification badges</li>
-    <li>🏅 <strong>Live Leaderboard:</strong> Class-wide performance rankings updated in real-time — staff compare standing with peers, advisors monitor top performers and engagement levels</li>
-    <li>🔐 <strong>Role-Based Access:</strong> Supabase Row-Level Security policies enforce staff / advisor permission boundaries on all database tables — JWT-authenticated API calls throughout</li>
-    <li>🔔 <strong>Notifications:</strong> Instant in-app notifications on request approval, rejection, and correction requests — with notification badges on the bottom nav</li>
-    <li>🛡️ <strong>Smart Navigation Guards:</strong> Prevents unauthorized route access, redirects classless staff to join page, disables back navigation on sensitive screens, and conditionally renders bottom nav based on user state</li>
-  </ul><br/>
-
-  <strong>Technical Implementation:</strong>
-  <ul>
-    <li>Built cross-platform mobile app with Expo SDK 54, React Native 0.81, and TypeScript using Expo Router file-based routing</li>
-    <li>Styled with NativeWind (Tailwind CSS for React Native) and custom components with Linear Gradients and Lucide icons</li>
-    <li>Integrated Supabase for PostgreSQL database, email/password authentication, RLS policies, and real-time data sync</li>
-    <li>Managed auth and class state globally via React Context API with AsyncStorage for local session persistence</li>
-    <li>Architected 6-table schema: users, classes, joined_classes, requests, activities, notifications — with cascade delete and many-to-many staff-class relationships</li>
-    <li>Added React Native Reanimated animations, safe area insets for gesture navigation devices, and auto-padding for 3-button navigation bars</li>
-  </ul><br/>
-
-  <strong>Impact:</strong> Delivered a production-ready mobile app serving two distinct roles — staff and advisors — with a full request lifecycle, live leaderboards, role-gated navigation, and Supabase-backed real-time data across Android and iOS.
-`,
-        role: `
-  <strong>Full-Stack Mobile Developer</strong><br/>
-  Designed and built the entire system end-to-end:<br/>
-  <ul>
-    <li>📱 <strong>Mobile App:</strong> Built the full Expo + React Native app with file-based Expo Router navigation, role-specific dashboards, and NativeWind styling</li>
-    <li>🗄️ <strong>Database Design:</strong> Designed the 6-table Supabase PostgreSQL schema with RLS policies, cascade operations, and indexed relationships for staff-class-request flows</li>
-    <li>🔐 <strong>Auth & Security:</strong> Wired up Supabase email/password auth with JWT token management, row-level security enforcement, and role-based navigation guards</li>
-    <li>🔄 <strong>Request Workflow:</strong> Implemented the full approve/reject/correction lifecycle with automatic point updates, activity logging, and notification dispatch on each state change</li>
-    <li>🏆 <strong>Leaderboard & Analytics:</strong> Built real-time class leaderboards and advisor performance analytics with 60-second auto-refresh and live notification badges</li>
-    <li>⚙️ <strong>State Management:</strong> Architected AuthContext and ClassContext providers with AsyncStorage persistence for seamless session restore and class state across app restarts</li>
-  </ul>
-`,
-        techStack: [
-            'React Native',
-            'Expo',
-            'PostgreSQL',
-            'TypeScript',
-            'Supabase',
-            'NativeWind',
-        ],
-        thumbnail: '/projects/thumbnail/project4.png',
-        longThumbnail: '/projects/long/project4.png',
-        images: [
-            '/projects/images/project4-1.png',
-            '/projects/images/project4-2.png',
-            '/projects/images/project4-3.png',
-        ],
-    },
     {
         title: 'Quizaroo',
         slug: 'quizaroo',
@@ -442,14 +383,15 @@ export const PROJECTS: IProject[] = [
   </ul>
 `,
         techStack: ['JavaScript', 'GitHub Pages', 'GitHub Actions', 'HTML5'],
-        thumbnail: '/projects/thumbnail/project3.png',
-        longThumbnail: '/projects/long/project3.png',
+        thumbnail: '/projects/quizaroo/main.png',
+        longThumbnail: '/projects/quizaroo/main.png',
         images: [
-            '/projects/images/project3-1.png',
-            '/projects/images/project3-2.png',
-            '/projects/images/project3-3.png',
+            '/projects/quizaroo/1.png',
+            '/projects/quizaroo/2.png',
+            '/projects/quizaroo/3.png',
         ],
     },
+
 ];
 
 export const MY_EXPERIENCE = [

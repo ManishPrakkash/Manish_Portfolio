@@ -106,9 +106,9 @@ const ProjectList = () => {
     return (
         <section className="pb-section" id="selected-projects">
             <div className="container">
-                <SectionTitle title="Selected Projects" />
+                <SectionTitle title="In Production" />
                 <p className="mt-6 mb-14 text-lg text-muted-foreground max-w-3xl">
-                    A curated set of <strong>full‑stack</strong> and <strong>React / Next.js</strong> builds demonstrating real‑world patterns: authentication flows, API integration, state management, performance tuning, and responsive UI engineering. Each project emphasizes scalable architecture and SEO‑friendly delivery.
+                    A showcase of <strong>DevSecOps</strong>, <strong>scalable infrastructure</strong>, and full‑stack engineering. These builds highlight real‑world CI/CD automation, secure deployments, and resilient cloud architecture.
                 </p>
 
                 <div className="group/projects relative" ref={containerRef}>
