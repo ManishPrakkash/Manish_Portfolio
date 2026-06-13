@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import React from 'react';
+import { GitHubActivity } from './GitHubActivity';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -95,6 +96,8 @@ const AboutMe = () => {
                         </div>
                     </div>
                 </div>
+
+                <GitHubActivity />
             </div>
         </section>
     );
